@@ -1,5 +1,6 @@
 /* Colors */
 /* Fonts */
+/* Font Weight */
 * {
   margin: 0;
   padding: 0;
@@ -19,8 +20,142 @@ h3, p {
   font-family: "Changa";
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  width: 100%;
+  background-color: hsl(1deg, 74%, 88%);
+}
+.banner p {
+  font-size: clamp(0.375rem, 2.5vw, 0.938rem);
+  text-align: center;
+  margin: 10px auto;
+}
+
+.container {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.header-text h1 {
+  width: 576px;
+  margin: 0 auto;
+  font-size: clamp(1.125rem, 2.5vw, 3rem);
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+.header-text p {
+  font-size: clamp(0.688rem, 2.5vw, 1.875rem);
+  font-weight: 700;
+  color: hsl(0deg, 0%, 100%);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  margin: 10px 0;
+}
+
+.players-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.carat-card, .svt-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  padding: 15px;
+  background-color: hsl(1deg, 74%, 88%);
+  border-radius: 15px;
+  border: 5px solid hsl(0deg, 0%, 0%);
+  box-shadow: -15px 15px hsla(0deg, 0%, 0%, 0.25);
+}
+
+.card-content {
+  width: 258px;
+  padding: 25px;
+  /* generated dashed border */
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='10' stroke-dasharray='3%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+.svt-card {
+  background-color: hsl(218deg, 40%, 69%);
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px auto;
+  background-color: hsl(0deg, 18%, 93%);
+  border: 3px solid hsl(0deg, 0%, 0%);
+  border-radius: 20px;
+  box-shadow: inset -3px 3px hsla(0deg, 0%, 0%, 0.25);
+}
+
+.score-number, .score-label {
+  font-size: clamp(0.5rem, 2.5vw, 1rem);
+  margin-bottom: 0;
+  width: 75px;
+}
+
+.score-label {
+  background-color: hsl(218deg, 40%, 69%);
+  border-radius: 20px;
+  border-right: 3px solid hsl(0deg, 0%, 0%);
+}
+
+.carat-img, .svt-img {
+  border-radius: 50%;
+  border: 3px solid hsl(0deg, 0%, 0%);
+  margin: 10px auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0deg, 18%, 93%);
+  border-radius: 20px;
+  border: 3px solid hsl(0deg, 0%, 0%);
+  box-shadow: inset 0 -5px hsla(0deg, 0%, 0%, 0.25);
+}
+
+.carat-name, .svt-name {
+  font-family: "Changa";
+  font-size: clamp(0.5rem, 2.5vw, 1rem);
+  background-color: hsl(218deg, 40%, 69%);
+  border-radius: 20px 20px 0 0;
+  border-bottom: 3px solid hsl(0deg, 0%, 0%);
+  padding: 3px;
+}
+
+.play-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 20px;
+}
+
 .btn-img {
-  width: 10px;
+  width: 50px;
+  height: 50px;
+  box-shadow: inset 0 -5px hsla(0deg, 0%, 0%, 0.25);
+  border-radius: 5px;
+  border: 3px solid hsl(0deg, 0%, 0%);
+  padding: 10px;
 }
 
 /*# sourceMappingURL=/main.07544d9b.css.map */
