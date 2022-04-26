@@ -1,2 +1,26 @@
+/* Colors */
+/* Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(47deg, 100%, 94%);
+  font-size: 16px;
+}
+
+h1, h2 {
+  font-family: "Press Start 2P";
+}
+
+h3, p {
+  font-family: "Changa";
+}
+
+.btn-img {
+  width: 10px;
+}
 
 /*# sourceMappingURL=/main.07544d9b.css.map */
