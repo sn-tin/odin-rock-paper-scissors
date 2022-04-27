@@ -84,5 +84,27 @@ document.querySelector(".reload-btn").addEventListener("click", function handleC
 });
 
 function seventeenPlay() {
-    
+    let computerRandomNum = Math.floor(Math.random() * 3);
+    let computerPlayOptions = ["Rock", "Paper", "Scissors"];
+    let computerPlayChoose = computerPlayOptions[computerRandomNum];
+
+    // Buttons
+    let rockBtn = document.querySelector(".rock-btn");
+	let paperBtn = document.querySelector(".play-btn");
+	let scissorsBtn = document.querySelector(".scissors-btn");
+    let chooseBtn = [rockBtn, paperBtn, scissorsBtn];
+
+    // Select result box
+    let resultShow = document.querySelector(".result h3");
+
+    document.chooseBtn.forEach(choose => { 
+        
+    });
+    if (computerPlayChoose === "Rock") {
+        resultShow.textContent = "You Chose Rock"
+    } else if (computerPlayChoose === "Paper") {
+        resultShow.textContent = "You Chose Paper"
+    } else if (computerPlayChoose === "Scissors") {
+        resultShow.textContent = "You Chose Scissors"
+    }
 }

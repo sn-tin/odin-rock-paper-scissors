@@ -98,16 +98,14 @@
     padding: 20px;
 }
 
-.btn-img {
-    width: 50px;
-    height: 50px;
-    box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
+.rock, .paper, .scissors {
     border-radius: 10px;
     border: 3px solid $black;
+    box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
+    width: 50px;
+    height: 50px;
     padding: 10px;
 }
-
-/* End of CARAT Card */
 
 /* SEVENTEEN Card */
 
@@ -115,7 +113,7 @@
 
 .card-btn-flex {
     display: flex;
-    flex-wrap: row wrap;
+    flex-direction: row;
     align-items: center;
     gap: 30px;
 }
@@ -144,10 +142,9 @@
 // To add using JavaScript
 
 .reload-btn-animation {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
     transition: all 0.5s ease-in;
 }
-
 
 .svt-card {
     background-color: $serenity;
@@ -167,4 +164,17 @@
     width: 84px;
     @extend .carat-img;
 }
-/* End of SEVENTEEN Card */
+
+
+@media screen and (max-width: 768px) {
+    .players-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card-btn-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
