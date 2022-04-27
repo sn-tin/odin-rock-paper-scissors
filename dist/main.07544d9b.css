@@ -159,6 +159,7 @@ main {
 .carat-name, .svt-name {
   font-family: "Changa";
   font-size: clamp(0.5rem, 2.5vw, 1rem);
+  text-transform: uppercase;
   background-color: hsl(218deg, 40%, 69%);
   border-radius: 15px 15px 0 0;
   border-bottom: 3px solid hsl(0deg, 0%, 0%);
