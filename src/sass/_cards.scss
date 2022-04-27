@@ -82,6 +82,7 @@
 .carat-name {
     font-family: $small-font;
     font-size: clamp(0.5rem , 2.5vw, 1rem);
+    text-transform: uppercase;
     background-color: $serenity;
     border-radius: 15px 15px 0 0;
     border-bottom: 3px solid $black;
@@ -143,21 +144,10 @@
 // To add using JavaScript
 
 .reload-btn-animation {
-    // animation-name: rotate;
-    // animation-duration: 1s;
-    // animation-iteration-count: infinite;
-    // animation-timing-function: 1;
-    // animation-play-state: running;
     transform: rotate(360deg);
     transition: all 0.5s ease-in;
 }
 
-// @keyframes rotate {
-
-//     from {transform: rotate(0deg)}
-//     to {transform: rotate(360deg)}
-    
-// }
 
 .svt-card {
     background-color: $serenity;
