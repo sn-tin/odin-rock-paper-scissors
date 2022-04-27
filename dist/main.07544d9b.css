@@ -27,6 +27,7 @@ main {
   align-items: center;
 }
 
+/* Banner */
 .banner {
   width: 100%;
   background-color: hsl(1deg, 74%, 88%);
@@ -37,11 +38,15 @@ main {
   margin: 15px auto;
 }
 
+/* End of Banner */
+/* Container */
 .container {
   text-align: center;
   margin: 50px auto;
 }
 
+/* End of Container */
+/* Header Text */
 .header-text h1 {
   width: 576px;
   margin: 0 auto;
@@ -60,6 +65,7 @@ main {
   margin: 10px 0;
 }
 
+/* End of Header Text */
 /* Result */
 .result {
   width: 620px;
@@ -86,6 +92,7 @@ main {
   color: hsl(0deg, 0%, 100%);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
+  text-shadow: 0 5px hsla(0deg, 0%, 0%, 0.25);
 }
 
 /* CARAT Card */

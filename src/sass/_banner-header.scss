@@ -1,3 +1,4 @@
+/* Banner */
 .banner {
     width: 100%;
     background-color: $rose-quartz;
@@ -7,12 +8,16 @@
         margin: 15px auto;
     }
 }
+/* End of Banner */
 
+/* Container */
 .container {
     text-align: center;
     margin: 50px auto;
 }
+/* End of Container */
 
+/* Header Text */
 .header-text {
     h1 {
         width: 576px;
@@ -32,6 +37,7 @@
         margin: 10px 0;
     }
 }
+/* End of Header Text */
 
 /* Result */
 
