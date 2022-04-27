@@ -2,9 +2,9 @@
     width: 100%;
     background-color: $rose-quartz;
     p {
-        font-size: clamp(0.375rem, 2.5vw, 0.938rem);
+        font-size: clamp(0.375rem, 2.5vw, 1.2rem);
         text-align: center;
-        margin: 10px auto;
+        margin: 15px auto;
     }
 }
 
@@ -30,5 +30,20 @@
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black;
         margin: 10px 0;
+    }
+}
+
+/* Result */
+
+.result {
+    width: 620px;
+    padding: 15px;
+    margin: 50px auto;
+    background-color: $gray;
+    border-radius: 20px;
+    border: 3px solid $black;
+    h3 {
+        font-size: clamp(0.875rem, 2.5vw, 2.188rem);
+        margin-bottom: 0;
     }
 }
