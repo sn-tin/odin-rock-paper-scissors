@@ -1,5 +1,5 @@
 document.querySelector(".reload-btn").addEventListener("click", function handleClick(event) {
-    event.target.classList.toggle("reload-btn-animation");
+    this.classList.toggle("reload-btn-animation");
 
     let randomNumber = Math.floor(Math.random() * 13) + 1;
 
@@ -82,3 +82,7 @@ document.querySelector(".reload-btn").addEventListener("click", function handleC
 		}
 	}
 });
+
+function seventeenPlay() {
+    
+}
