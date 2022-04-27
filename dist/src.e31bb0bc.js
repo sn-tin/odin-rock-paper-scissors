@@ -119,7 +119,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"index.js":[function(require,module,exports) {
 document.querySelector(".reload-btn").addEventListener("click", function handleClick(event) {
-  event.target.classList.toggle("reload-btn-animation"); // let randomNumber = Math.floor(Math.random() * 13) + 1;
+  event.target.classList.toggle("reload-btn-animation");
+  var randomNumber = Math.floor(Math.random() * 13) + 1;
 
   for (var i = 0; i <= randomNumber; i++) {
     var svtImage = document.querySelector(".svt-img");
@@ -240,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39259" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41985" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
