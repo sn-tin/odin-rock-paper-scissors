@@ -109,6 +109,56 @@
 /* End of CARAT Card */
 
 /* SEVENTEEN Card */
+
+// Flex svt card and reload button
+
+.card-btn-flex {
+    display: flex;
+    flex-wrap: row wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+// Reload button attributes
+
+.reload {
+    border-radius: 10px;
+    background-color: $white;
+    border: 3px solid $black;
+    box-shadow: 5px 5px hsla(0, 0%, 0%, 0.25);
+}
+
+.reload:hover {
+    background-color: $serenity;
+}
+
+.reload-btn {
+    width: 50px;
+    padding: 13px;
+    border: none;
+    background-color: transparent;
+    transition: all 1s ease-in;
+}
+
+// To add using JavaScript
+
+.reload-btn-animation {
+    // animation-name: rotate;
+    // animation-duration: 1s;
+    // animation-iteration-count: infinite;
+    // animation-timing-function: 1;
+    // animation-play-state: running;
+    transform: rotate(360deg);
+    transition: all 1s ease-in;
+}
+
+// @keyframes rotate {
+
+//     from {transform: rotate(0deg)}
+//     to {transform: rotate(360deg)}
+    
+// }
+
 .svt-card {
     background-color: $serenity;
     @extend .carat-card;
@@ -127,5 +177,4 @@
     width: 84px;
     @extend .carat-img;
 }
-
 /* End of SEVENTEEN Card */

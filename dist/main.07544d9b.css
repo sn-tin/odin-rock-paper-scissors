@@ -185,6 +185,37 @@ main {
 
 /* End of CARAT Card */
 /* SEVENTEEN Card */
+.card-btn-flex {
+  display: flex;
+  flex-wrap: row wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.reload {
+  border-radius: 10px;
+  background-color: hsl(0deg, 0%, 100%);
+  border: 3px solid hsl(0deg, 0%, 0%);
+  box-shadow: 5px 5px hsla(0deg, 0%, 0%, 0.25);
+}
+
+.reload:hover {
+  background-color: hsl(218deg, 40%, 69%);
+}
+
+.reload-btn {
+  width: 50px;
+  padding: 13px;
+  border: none;
+  background-color: transparent;
+  transition: all 1s ease-in;
+}
+
+.reload-btn-animation {
+  transform: rotate(360deg);
+  transition: all 1s ease-in;
+}
+
 .svt-card {
   background-color: hsl(218deg, 40%, 69%);
 }
