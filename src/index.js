@@ -1,7 +1,7 @@
 document.querySelector(".reload-btn").addEventListener("click", function handleClick(event) {
     event.target.classList.toggle("reload-btn-animation");
 
-    let randomNumber = Math.floor(Math.random() * 13) + 1;
+    // let randomNumber = Math.floor(Math.random() * 13) + 1;
 
     for( let i = 0; i <= randomNumber; i++) {
 
