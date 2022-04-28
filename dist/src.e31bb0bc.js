@@ -250,6 +250,21 @@ function seventeenPlay() {
     result("scissors");
   }
 }
+/* Global variables for button choices */
+
+/* Not sure about this */
+
+
+var rockBtn = document.querySelector(".rock-btn");
+var paperBtn = document.querySelector(".paper-btn");
+var scissorsBtn = document.querySelector(".scissors-btn");
+var btnChoices = [rockBtn, paperBtn, scissorsBtn];
+var caratCHoice;
+btnChoices.forEach(function (btnChoice) {
+  return btnChoice.addEventListener("click", function (e) {
+    caratChoice = e.target.id;
+  });
+});
 
 function caratPlay() {
   var svtChoose = seventeenPlay();
@@ -292,7 +307,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33443" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46097" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

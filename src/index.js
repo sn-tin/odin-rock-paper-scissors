@@ -100,6 +100,18 @@ function seventeenPlay() {
     }
 }
 
+/* Global variables for button choices */
+
+/* Not sure about this */
+let rockBtn = document.querySelector(".rock-btn");
+let paperBtn = document.querySelector(".paper-btn");
+let scissorsBtn = document.querySelector(".scissors-btn");
+let btnChoices = [rockBtn, paperBtn, scissorsBtn];
+let caratCHoice 
+
+btnChoices.forEach(btnChoice => btnChoice.addEventListener("click", (e) => {
+    caratChoice = e.target.id;
+}));
 
 function caratPlay() {
     let svtChoose = seventeenPlay();
