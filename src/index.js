@@ -1,3 +1,5 @@
+/* Switching Seventeen Player */
+
 document.querySelector(".reload-btn").addEventListener("click", function handleClick(event) {
     this.classList.toggle("reload-btn-animation");
 
@@ -83,6 +85,16 @@ document.querySelector(".reload-btn").addEventListener("click", function handleC
 	}
 });
 
+/* Carat's Name Input */
+/*
+document.querySelector(".rock").addEventListener("click", function caratNameInput() {
+    let caratCardName = document.querySelector(".carat-name");
+    let getCaratName = prompt("What's your name?");
+
+    caratCardName.textContent = getCaratName;
+});
+*/
+
 function seventeenPlay() {
     let computerRandomNum = Math.floor(Math.random() * 3);
     let computerPlayOptions = ["Rock", "Paper", "Scissors"];
@@ -95,16 +107,20 @@ function seventeenPlay() {
     let chooseBtn = [rockBtn, paperBtn, scissorsBtn];
 
     // Select result box
-    let resultShow = document.querySelector(".result h3");
+    // let resultShow = document.querySelector(".result h3");
 
-    document.chooseBtn.forEach(choose => { 
+    // document.chooseBtn.forEach(choose => { 
         
-    });
-    if (computerPlayChoose === "Rock") {
-        resultShow.textContent = "You Chose Rock"
-    } else if (computerPlayChoose === "Paper") {
-        resultShow.textContent = "You Chose Paper"
-    } else if (computerPlayChoose === "Scissors") {
-        resultShow.textContent = "You Chose Scissors"
-    }
+    // });
+    // if (computerPlayChoose === "Rock") {
+    //     resultShow.textContent = "You Chose Rock"
+    // } else if (computerPlayChoose === "Paper") {
+    //     resultShow.textContent = "You Chose Paper"
+    // } else if (computerPlayChoose === "Scissors") {
+    //     resultShow.textContent = "You Chose Scissors"
+    // }
+}
+
+function caratPlay() {
+    
 }

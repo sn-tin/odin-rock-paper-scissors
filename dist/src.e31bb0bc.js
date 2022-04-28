@@ -118,6 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
+/* Switching Seventeen Player */
 document.querySelector(".reload-btn").addEventListener("click", function handleClick(event) {
   this.classList.toggle("reload-btn-animation");
   var randomNumber = Math.floor(Math.random() * 13) + 1;
@@ -213,6 +214,16 @@ document.querySelector(".reload-btn").addEventListener("click", function handleC
     }
   }
 });
+/* Carat's Name Input */
+
+/*
+document.querySelector(".rock").addEventListener("click", function caratNameInput() {
+    let caratCardName = document.querySelector(".carat-name");
+    let getCaratName = prompt("What's your name?");
+
+    caratCardName.textContent = getCaratName;
+});
+*/
 
 function seventeenPlay() {
   var computerRandomNum = Math.floor(Math.random() * 3);
@@ -223,18 +234,19 @@ function seventeenPlay() {
   var paperBtn = document.querySelector(".play-btn");
   var scissorsBtn = document.querySelector(".scissors-btn");
   var chooseBtn = [rockBtn, paperBtn, scissorsBtn]; // Select result box
-
-  var resultShow = document.querySelector(".result h3");
-  document.chooseBtn.forEach(function (choose) {});
-
-  if (computerPlayChoose === "Rock") {
-    resultShow.textContent = "You Chose Rock";
-  } else if (computerPlayChoose === "Paper") {
-    resultShow.textContent = "You Chose Paper";
-  } else if (computerPlayChoose === "Scissors") {
-    resultShow.textContent = "You Chose Scissors";
-  }
+  // let resultShow = document.querySelector(".result h3");
+  // document.chooseBtn.forEach(choose => { 
+  // });
+  // if (computerPlayChoose === "Rock") {
+  //     resultShow.textContent = "You Chose Rock"
+  // } else if (computerPlayChoose === "Paper") {
+  //     resultShow.textContent = "You Chose Paper"
+  // } else if (computerPlayChoose === "Scissors") {
+  //     resultShow.textContent = "You Chose Scissors"
+  // }
 }
+
+function caratPlay() {}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -263,7 +275,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38177" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39681" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
