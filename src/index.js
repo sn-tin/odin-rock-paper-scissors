@@ -1,9 +1,12 @@
 /* Switch Seventeen Player */
 document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
-    // Switch button animation
+    /* Switch button animation */
     this.classList.add("reload-btn-animation");
 
+    /* Generate random number to switch seventeen player */
+
     let randomNumber = Math.floor(Math.random() * 13) + 1;
+    /* Randomly switch seventeen player */
 
     for( let i = 0; i <= randomNumber; i++) {
 
@@ -78,6 +81,8 @@ document.querySelector(".rename").addEventListener("click", function caratNameIn
     let getCaratName = prompt("What's your name?");
 
     caratCardName.textContent = getCaratName;
+
+    // Code for characters limit on names
 });
 
 
@@ -94,6 +99,7 @@ function seventeenPlay() {
         result ("scissors")
     }
 }
+
 
 function caratPlay() {
     let svtChoose = seventeenPlay();

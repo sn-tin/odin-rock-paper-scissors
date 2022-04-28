@@ -132,7 +132,7 @@ main {
   background-color: hsl(1deg, 74%, 88%);
   border-radius: 15px;
   border: 5px solid hsl(0deg, 0%, 0%);
-  box-shadow: 15px 15px hsla(0deg, 0%, 0%, 0.25);
+  box-shadow: 10px 10px hsla(0deg, 0%, 0%, 0.25);
 }
 
 .card-content {
@@ -253,7 +253,7 @@ main {
 
 .svt-card {
   background-color: hsl(218deg, 40%, 69%);
-  box-shadow: -15px 15px hsla(0deg, 0%, 0%, 0.25);
+  box-shadow: -10px 10px hsla(0deg, 0%, 0%, 0.25);
 }
 .svt-card .score-label {
   background-color: hsl(1deg, 74%, 88%);

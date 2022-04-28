@@ -52,7 +52,7 @@
     background-color: $rose-quartz;
     border-radius: 15px;
     border: 5px solid $black;
-    box-shadow: 15px 15px hsla(0, 0%, 0%, 0.25);
+    box-shadow: 10px 10px hsla(0, 0%, 0%, 0.25);
 }
 
 .card-content {
@@ -183,7 +183,7 @@
 
 .svt-card {
     background-color: $serenity;
-    box-shadow: -15px 15px hsla(0, 0%, 0%, 0.25);
+    box-shadow: -10px 10px hsla(0, 0%, 0%, 0.25);
     @extend .carat-card;
 
     .score-label {

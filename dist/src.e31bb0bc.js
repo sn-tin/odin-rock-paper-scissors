@@ -146,9 +146,12 @@ module.exports = "/svt-pilot-13.200ec595.jpg";
 },{}],"index.js":[function(require,module,exports) {
 /* Switch Seventeen Player */
 document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
-  // Switch button animation
+  /* Switch button animation */
   this.classList.add("reload-btn-animation");
+  /* Generate random number to switch seventeen player */
+
   var randomNumber = Math.floor(Math.random() * 13) + 1;
+  /* Randomly switch seventeen player */
 
   for (var i = 0; i <= randomNumber; i++) {
     var svtImage = document.querySelector(".svt-img");
@@ -232,7 +235,7 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 document.querySelector(".rename").addEventListener("click", function caratNameInput() {
   var caratCardName = document.querySelector(".carat-name");
   var getCaratName = prompt("What's your name?");
-  caratCardName.textContent = getCaratName;
+  caratCardName.textContent = getCaratName; // Code for characters limit on names
 });
 /* SEVENTEEN (computer) Play */
 
@@ -289,7 +292,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35479" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33443" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
