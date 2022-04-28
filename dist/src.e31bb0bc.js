@@ -117,7 +117,33 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"images/svt-pilot-1.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-1.3321aa63.jpg";
+},{}],"images/svt-pilot-2.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-2.48c752f7.jpg";
+},{}],"images/svt-pilot-3.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-3.b07eeb95.jpg";
+},{}],"images/svt-pilot-4.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-4.2659719b.jpg";
+},{}],"images/svt-pilot-5.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-5.240b48d1.jpg";
+},{}],"images/svt-pilot-6.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-6.3b93c441.jpg";
+},{}],"images/svt-pilot-7.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-7.0890a2ee.jpg";
+},{}],"images/svt-pilot-8.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-8.6addabc4.jpg";
+},{}],"images/svt-pilot-9.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-9.39fccf5f.jpg";
+},{}],"images/svt-pilot-10.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-10.1aca96da.jpg";
+},{}],"images/svt-pilot-11.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-11.b9829dc1.jpg";
+},{}],"images/svt-pilot-12.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-12.a05031c6.jpg";
+},{}],"images/svt-pilot-13.jpg":[function(require,module,exports) {
+module.exports = "/svt-pilot-13.200ec595.jpg";
+},{}],"index.js":[function(require,module,exports) {
 /* Switch Seventeen Player */
 document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
   this.classList.toggle("reload-btn-animation");
@@ -129,86 +155,85 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 
     switch (true) {
       case i === 1:
-        // svtImage.src = "./images/svt-pilot-1.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-1.jpg");
+        svtImage.src = require("./images/svt-pilot-1.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-1.jpg");
+
         svtName.textContent = "Choi Seungcheol";
         break;
 
       case i === 2:
-        // svtImage.src = "./images/svt-pilot-2.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-2.jpg");
+        svtImage.src = require("./images/svt-pilot-2.jpg");
         svtName.textContent = "Yoon Jeonghan";
         break;
 
       case i === 3:
-        // svtImage.src = "./images/svt-pilot-3.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-3.jpg");
+        svtImage.src = require("./images/svt-pilot-3.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-3.jpg");
+
         svtName.textContent = "Joshua Hong";
         break;
 
       case i === 4:
-        // svtImage.src = "./images/svt-pilot-4.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-4.jpg");
+        svtImage.src = require("./images/svt-pilot-4.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-4.jpg");
+
         svtName.textContent = "Wen Junhui";
         break;
 
       case i === 5:
-        // svtImage.src = "./images/svt-pilot-5.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-5.jpg");
+        svtImage.src = require("./images/svt-pilot-5.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-5.jpg");
+
         svtName.textContent = "Kwon Hoshi";
         break;
 
       case i === 6:
-        // svtImage.src = "./images/svt-pilot-6.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-6.jpg");
+        svtImage.src = require("./images/svt-pilot-6.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-6.jpg");
+
         svtName.textContent = "Jeon Wonwoo";
         break;
 
       case i === 7:
-        // svtImage.src = "./images/svt-pilot-7.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-7.jpg");
+        svtImage.src = require("./images/svt-pilot-7.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-7.jpg");
+
         svtName.textContent = "Lee Jihoon";
         break;
 
       case i === 8:
-        // svtImage.src = "./images/svt-pilot-8.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-8.jpg");
+        svtImage.src = require("./images/svt-pilot-8.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-8.jpg");
+
         svtName.textContent = "Xu Minghao";
         break;
 
       case i == 9:
-        // svtImage.src = "./images/svt-pilot-9.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-9.jpg");
+        svtImage.src = require("./images/svt-pilot-9.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-9.jpg");
+
         svtName.textContent = "Kim Mingyu";
         break;
 
       case i === 10:
-        // svtImage.src = "./images/svt-pilot-10.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-10.jpg");
+        svtImage.src = require("./images/svt-pilot-10.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-10.jpg");
+
         svtName.textContent = "Lee Dokyeom";
         break;
 
       case i === 11:
-        // svtImage.src = "./images/svt-pilot-11.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-11.jpg");
+        svtImage.src = require("./images/svt-pilot-11.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-11.jpg");
+
         svtName.textContent = "Boo Seungkwan";
         break;
 
       case i === 12:
-        // svtImage.src = "./images/svt-pilot-12.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-12.jpg");
+        svtImage.src = require("./images/svt-pilot-12.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-12.jpg");
+
         svtName.textContent = "Vernon Chwe";
         break;
 
       case i === 13:
-        // svtImage.src = "./images/svt-pilot-13.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-13.jpg");
+        svtImage.src = require("./images/svt-pilot-13.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-13.jpg");
+
         svtName.textContent = "Lee Dino";
         break;
 
       default:
-        // svtImage.src = "./images/svt-pilot-13.jpg";
-        svtImage.setAttribute("src", "./images/svt-pilot-13.jpg");
+        svtImage.src = require("./images/svt-pilot-13.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-13.jpg");
+
         svtName.textContent = "Team SVT";
         break;
     }
@@ -216,15 +241,11 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 });
 /* Carat's Name Input */
 
-/*
 document.querySelector(".rock").addEventListener("click", function caratNameInput() {
-    let caratCardName = document.querySelector(".carat-name");
-    let getCaratName = prompt("What's your name?");
-
-    caratCardName.textContent = getCaratName;
+  var caratCardName = document.querySelector(".carat-name");
+  var getCaratName = prompt("What's your name?");
+  caratCardName.textContent = getCaratName;
 });
-*/
-
 /* 
 * SEVENTEEN (computer) Play 
 * svt = Seventeen
@@ -255,7 +276,7 @@ function caratPlay() {
   var svtPlayPaper = document.querySelector(".svt-paper-btn");
   var svtPlayScissors = document.querySelector(".svt-scissors-btn");
 }
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -283,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42695" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46449" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
