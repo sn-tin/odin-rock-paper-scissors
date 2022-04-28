@@ -146,7 +146,8 @@ module.exports = "/svt-pilot-13.200ec595.jpg";
 },{}],"index.js":[function(require,module,exports) {
 /* Switch Seventeen Player */
 document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
-  this.classList.toggle("reload-btn-animation");
+  // Switch button animation
+  this.classList.add("reload-btn-animation");
   var randomNumber = Math.floor(Math.random() * 13) + 1;
 
   for (var i = 0; i <= randomNumber; i++) {
@@ -155,8 +156,7 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 
     switch (true) {
       case i === 1:
-        svtImage.src = require("./images/svt-pilot-1.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-1.jpg");
-
+        svtImage.src = require("./images/svt-pilot-1.jpg");
         svtName.textContent = "Choi Seungcheol";
         break;
 
@@ -166,74 +166,62 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
         break;
 
       case i === 3:
-        svtImage.src = require("./images/svt-pilot-3.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-3.jpg");
-
+        svtImage.src = require("./images/svt-pilot-3.jpg");
         svtName.textContent = "Joshua Hong";
         break;
 
       case i === 4:
-        svtImage.src = require("./images/svt-pilot-4.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-4.jpg");
-
+        svtImage.src = require("./images/svt-pilot-4.jpg");
         svtName.textContent = "Wen Junhui";
         break;
 
       case i === 5:
-        svtImage.src = require("./images/svt-pilot-5.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-5.jpg");
-
+        svtImage.src = require("./images/svt-pilot-5.jpg");
         svtName.textContent = "Kwon Hoshi";
         break;
 
       case i === 6:
-        svtImage.src = require("./images/svt-pilot-6.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-6.jpg");
-
+        svtImage.src = require("./images/svt-pilot-6.jpg");
         svtName.textContent = "Jeon Wonwoo";
         break;
 
       case i === 7:
-        svtImage.src = require("./images/svt-pilot-7.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-7.jpg");
-
+        svtImage.src = require("./images/svt-pilot-7.jpg");
         svtName.textContent = "Lee Jihoon";
         break;
 
       case i === 8:
-        svtImage.src = require("./images/svt-pilot-8.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-8.jpg");
-
+        svtImage.src = require("./images/svt-pilot-8.jpg");
         svtName.textContent = "Xu Minghao";
         break;
 
       case i == 9:
-        svtImage.src = require("./images/svt-pilot-9.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-9.jpg");
-
+        svtImage.src = require("./images/svt-pilot-9.jpg");
         svtName.textContent = "Kim Mingyu";
         break;
 
       case i === 10:
-        svtImage.src = require("./images/svt-pilot-10.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-10.jpg");
-
+        svtImage.src = require("./images/svt-pilot-10.jpg");
         svtName.textContent = "Lee Dokyeom";
         break;
 
       case i === 11:
-        svtImage.src = require("./images/svt-pilot-11.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-11.jpg");
-
+        svtImage.src = require("./images/svt-pilot-11.jpg");
         svtName.textContent = "Boo Seungkwan";
         break;
 
       case i === 12:
-        svtImage.src = require("./images/svt-pilot-12.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-12.jpg");
-
+        svtImage.src = require("./images/svt-pilot-12.jpg");
         svtName.textContent = "Vernon Chwe";
         break;
 
       case i === 13:
-        svtImage.src = require("./images/svt-pilot-13.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-13.jpg");
-
+        svtImage.src = require("./images/svt-pilot-13.jpg");
         svtName.textContent = "Lee Dino";
         break;
 
       default:
-        svtImage.src = require("./images/svt-pilot-13.jpg"); // svtImage.setAttribute("src", "./images/svt-pilot-13.jpg");
-
+        svtImage.src = require("./images/svt-pilot-13.jpg");
         svtName.textContent = "Team SVT";
         break;
     }
@@ -241,15 +229,12 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 });
 /* Carat's Name Input */
 
-document.querySelector(".rock").addEventListener("click", function caratNameInput() {
+document.querySelector(".rename").addEventListener("click", function caratNameInput() {
   var caratCardName = document.querySelector(".carat-name");
   var getCaratName = prompt("What's your name?");
   caratCardName.textContent = getCaratName;
 });
-/* 
-* SEVENTEEN (computer) Play 
-* svt = Seventeen
-*/
+/* SEVENTEEN (computer) Play */
 
 function seventeenPlay() {
   var svtPlayRandomNum = Math.floor(Math.random() * 3);
@@ -304,7 +289,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46449" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35479" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

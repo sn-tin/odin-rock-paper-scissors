@@ -16,6 +16,32 @@
 
 /* CARAT Card */
 
+.card-rename-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 30px;
+}
+
+.rename {
+    border-radius: 10px;
+    background-color: $white;
+    border: 3px solid $black;
+    box-shadow: -5px 5px hsla(0, 0%, 0%, 0.25);
+}
+
+.rename:hover {
+    background-color: $rose-quartz;
+}
+
+.rename-btn {
+    width: 50px;
+    padding: 13px;
+    border: none;
+    background-color: transparent;
+    transition: all 0.5s ease-in;
+}
+
 .carat-card {
     display: flex;
     flex-direction: column;
@@ -26,7 +52,7 @@
     background-color: $rose-quartz;
     border-radius: 15px;
     border: 5px solid $black;
-    box-shadow: -15px 15px hsla(0, 0%, 0%, 0.25);
+    box-shadow: 15px 15px hsla(0, 0%, 0%, 0.25);
 }
 
 .card-content {
@@ -120,7 +146,7 @@
 
 // Flex svt card and reload button
 
-.card-btn-flex {
+.card-reload-flex {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -157,6 +183,7 @@
 
 .svt-card {
     background-color: $serenity;
+    box-shadow: -15px 15px hsla(0, 0%, 0%, 0.25);
     @extend .carat-card;
 
     .score-label {
@@ -181,7 +208,7 @@
         gap: 10px;
     }
 
-    .card-btn-flex {
+    .card-reload-flex {
         flex-direction: column;
         align-items: center;
         gap: 30px;
