@@ -1,6 +1,5 @@
-/* Switching Seventeen Player */
-
-document.querySelector(".reload-btn").addEventListener("click", function handleClick(event) {
+/* Switch Seventeen Player */
+document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
     this.classList.toggle("reload-btn-animation");
 
     let randomNumber = Math.floor(Math.random() * 13) + 1;
@@ -95,32 +94,34 @@ document.querySelector(".rock").addEventListener("click", function caratNameInpu
 });
 */
 
+/* 
+* SEVENTEEN (computer) Play 
+* svt = Seventeen
+*/
+
 function seventeenPlay() {
-    let computerRandomNum = Math.floor(Math.random() * 3);
-    let computerPlayOptions = ["Rock", "Paper", "Scissors"];
-    let computerPlayChoose = computerPlayOptions[computerRandomNum];
 
-    // Buttons
-    let rockBtn = document.querySelector(".rock-btn");
-	let paperBtn = document.querySelector(".play-btn");
-	let scissorsBtn = document.querySelector(".scissors-btn");
-    let chooseBtn = [rockBtn, paperBtn, scissorsBtn];
+    let svtPlayRandomNum = Math.floor(Math.random() * 3);
 
-    // Select result box
-    // let resultShow = document.querySelector(".result h3");
-
-    // document.chooseBtn.forEach(choose => { 
-        
-    // });
-    // if (computerPlayChoose === "Rock") {
-    //     resultShow.textContent = "You Chose Rock"
-    // } else if (computerPlayChoose === "Paper") {
-    //     resultShow.textContent = "You Chose Paper"
-    // } else if (computerPlayChoose === "Scissors") {
-    //     resultShow.textContent = "You Chose Scissors"
-    // }
+    if (svtPlayRandomNum === 0) {
+        result ("rock")
+    } else if (svtPlayRandomNum === 1) {
+        result ("paper")
+    } else {
+        result ("scissors")
+    }
 }
 
 function caratPlay() {
-    
+    let svtChoose = seventeenPlay();
+
+    /* Carat choose button */
+    let caratPlayRock = document.querySelector(".carat-rock-btn");
+	let caratPlayPaper = document.querySelector(".carat-paper-btn");
+	let caratPlayScissors = document.querySelector(".carat-scissors-btn");
+
+    /* Seventeen choose button */
+    let svtPlayRock = document.querySelector(".svt-rock-btn");
+    let svtPlayPaper = document.querySelector(".svt-paper-btn");
+    let svtPlayScissors = document.querySelector(".svt-scissors-btn");
 }

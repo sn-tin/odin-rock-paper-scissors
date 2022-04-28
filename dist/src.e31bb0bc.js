@@ -118,8 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-/* Switching Seventeen Player */
-document.querySelector(".reload-btn").addEventListener("click", function handleClick(event) {
+/* Switch Seventeen Player */
+document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
   this.classList.toggle("reload-btn-animation");
   var randomNumber = Math.floor(Math.random() * 13) + 1;
 
@@ -225,28 +225,36 @@ document.querySelector(".rock").addEventListener("click", function caratNameInpu
 });
 */
 
-function seventeenPlay() {
-  var computerRandomNum = Math.floor(Math.random() * 3);
-  var computerPlayOptions = ["Rock", "Paper", "Scissors"];
-  var computerPlayChoose = computerPlayOptions[computerRandomNum]; // Buttons
+/* 
+* SEVENTEEN (computer) Play 
+* svt = Seventeen
+*/
 
-  var rockBtn = document.querySelector(".rock-btn");
-  var paperBtn = document.querySelector(".play-btn");
-  var scissorsBtn = document.querySelector(".scissors-btn");
-  var chooseBtn = [rockBtn, paperBtn, scissorsBtn]; // Select result box
-  // let resultShow = document.querySelector(".result h3");
-  // document.chooseBtn.forEach(choose => { 
-  // });
-  // if (computerPlayChoose === "Rock") {
-  //     resultShow.textContent = "You Chose Rock"
-  // } else if (computerPlayChoose === "Paper") {
-  //     resultShow.textContent = "You Chose Paper"
-  // } else if (computerPlayChoose === "Scissors") {
-  //     resultShow.textContent = "You Chose Scissors"
-  // }
+function seventeenPlay() {
+  var svtPlayRandomNum = Math.floor(Math.random() * 3);
+
+  if (svtPlayRandomNum === 0) {
+    result("rock");
+  } else if (svtPlayRandomNum === 1) {
+    result("paper");
+  } else {
+    result("scissors");
+  }
 }
 
-function caratPlay() {}
+function caratPlay() {
+  var svtChoose = seventeenPlay();
+  /* Carat choose button */
+
+  var caratPlayRock = document.querySelector(".carat-rock-btn");
+  var caratPlayPaper = document.querySelector(".carat-paper-btn");
+  var caratPlayScissors = document.querySelector(".carat-scissors-btn");
+  /* Seventeen choose button */
+
+  var svtPlayRock = document.querySelector(".svt-rock-btn");
+  var svtPlayPaper = document.querySelector(".svt-paper-btn");
+  var svtPlayScissors = document.querySelector(".svt-scissors-btn");
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -275,7 +283,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39681" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42695" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
