@@ -38,14 +38,12 @@ main {
   margin: 15px auto;
 }
 
-/* End of Banner */
 /* Container */
 .container {
   text-align: center;
   margin: 50px auto;
 }
 
-/* End of Container */
 /* Header Text */
 .header-text h1 {
   width: 576px;
@@ -65,18 +63,25 @@ main {
   margin: 10px 0;
 }
 
-/* End of Header Text */
 /* Result */
 .result {
   width: 620px;
-  padding: 15px;
   margin: 50px auto;
-  background-color: hsl(0deg, 18%, 93%);
-  border-radius: 20px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 5px;
   border: 3px solid hsl(0deg, 0%, 0%);
 }
-.result h3 {
-  font-size: clamp(0.875rem, 2.5vw, 2.188rem);
+.result .round-label {
+  width: 25%;
+  font-size: clamp(0.875rem, 2.5vw, 1.2rem);
+  margin-bottom: 0;
+  padding: 5px 30px;
+  text-align: center;
+  border-right: 3px solid hsl(0deg, 0%, 0%);
+  background-color: hsl(0deg, 18%, 93%);
+}
+.result .result-text {
+  padding-bottom: 0;
   margin-bottom: 0;
 }
 

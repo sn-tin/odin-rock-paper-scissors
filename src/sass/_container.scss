@@ -9,14 +9,11 @@
     }
 }
 
-/* End of Banner */
-
 /* Container */
 .container {
     text-align: center;
     margin: 50px auto;
 }
-/* End of Container */
 
 /* Header Text */
 .header-text {
@@ -38,19 +35,26 @@
         margin: 10px 0;
     }
 }
-/* End of Header Text */
 
 /* Result */
 
 .result {
     width: 620px;
-    padding: 15px;
     margin: 50px auto;
-    background-color: $gray;
-    border-radius: 20px;
+    background-color: $white;
+    border-radius: 5px;
     border: 3px solid $black;
-    h3 {
-        font-size: clamp(0.875rem, 2.5vw, 2.188rem);
+    .round-label {
+        width: 25%;
+        font-size: clamp(0.875rem, 2.5vw, 1.2rem);
+        margin-bottom: 0;
+        padding: 5px 30px;
+        text-align: center;
+        border-right: 3px solid $black;
+        background-color: $gray;
+    }
+    .result-text {
+        padding-bottom: 0;
         margin-bottom: 0;
     }
 }
