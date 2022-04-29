@@ -261,11 +261,10 @@ var choicesArray = [playerRockBtn, playerPaperBtn, playerScissorsBtn]; //- Click
 
 choicesArray.forEach(function (choicesBtn) {
   choicesBtn.addEventListener('click', function (event) {
-    var targetBtn = event.target; // console.log("It worked");
-    // targetBtn.classList.toggle('clicked-btn');
+    var targetBtn = event.target;
 
     if (targetBtn.classList.contains("carat-rock")) {
-      playerRockBtn.classList.toggle("clicked-btn");
+      playerRockBtn.classList.add("clicked-btn");
       playerPaperBtn.classList.remove("clicked-btn");
       playerScissorsBtn.classList.remove("clicked-btn"); // return("rock");
 
@@ -273,7 +272,7 @@ choicesArray.forEach(function (choicesBtn) {
     }
 
     if (targetBtn.classList.contains("carat-paper")) {
-      playerPaperBtn.classList.toggle("clicked-btn");
+      playerPaperBtn.classList.add("clicked-btn");
       playerRockBtn.classList.remove("clicked-btn");
       playerScissorsBtn.classList.remove("clicked-btn"); // return("paper");
 
@@ -281,7 +280,7 @@ choicesArray.forEach(function (choicesBtn) {
     }
 
     if (targetBtn.classList.contains("carat-scissors")) {
-      playerScissorsBtn.classList.toggle("clicked-btn");
+      playerScissorsBtn.classList.add("clicked-btn");
       playerRockBtn.classList.remove("clicked-btn");
       playerPaperBtn.classList.remove("clicked-btn"); // return("scissors");
 
@@ -317,7 +316,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36829" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41831" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

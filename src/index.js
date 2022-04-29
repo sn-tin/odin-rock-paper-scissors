@@ -111,24 +111,22 @@ let choicesArray = [playerRockBtn, playerPaperBtn, playerScissorsBtn];
 choicesArray.forEach(choicesBtn => {
 	choicesBtn.addEventListener('click', event => {
         let targetBtn = event.target;
-        // console.log("It worked");
-        // targetBtn.classList.toggle('clicked-btn');
         if(targetBtn.classList.contains("carat-rock")){
-            playerRockBtn.classList.toggle("clicked-btn");
+            playerRockBtn.classList.add("clicked-btn");
             playerPaperBtn.classList.remove("clicked-btn");
             playerScissorsBtn.classList.remove("clicked-btn");
             // return("rock");
             console.log("rock");
         }
         if(targetBtn.classList.contains("carat-paper")){
-            playerPaperBtn.classList.toggle("clicked-btn");
+            playerPaperBtn.classList.add("clicked-btn");
             playerRockBtn.classList.remove("clicked-btn");
             playerScissorsBtn.classList.remove("clicked-btn");
             // return("paper");
             console.log("paper");
         }
         if(targetBtn.classList.contains("carat-scissors")){
-            playerScissorsBtn.classList.toggle("clicked-btn");
+            playerScissorsBtn.classList.add("clicked-btn");
             playerRockBtn.classList.remove("clicked-btn");
             playerPaperBtn.classList.remove("clicked-btn");
             // return("scissors");
