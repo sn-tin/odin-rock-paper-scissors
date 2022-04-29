@@ -130,15 +130,32 @@
     box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
     width: 50px;
     height: 50px;
-    padding: 10px;
+    padding: 10px; // to remove
+}
+
+.rock {
+    background-image: url("../images/hand-back-fist-solid.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.paper {
+    background-image: url("../images/hand-solid.svg");
+    @extend .rock;
+}
+
+.scissors {
+    background-image: url("../images/hand-scissors-solid.svg");
+    @extend .rock;
 }
 
 .clicked-btn {
-    border-radius: 10px;
-    border: 3px solid $black;
+    // border-radius: 10px;
+    // border: 3px solid $black;
     box-shadow: inset 5px 5px hsla(0, 0%, 0%, 0.25);
-    width: 50px;
-    height: 50px;
+//     width: 50px;
+//     height: 50px;
     padding: 10px;
 }
 

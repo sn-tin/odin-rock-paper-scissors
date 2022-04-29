@@ -92,37 +92,47 @@ function seventeenPlay() {
     let svtPlayRandomNum = Math.floor(Math.random() * 3);
 
     if (svtPlayRandomNum === 0) {
-        result ("rock")
+        // result ("rock")
+        console.log("rock")
     } else if (svtPlayRandomNum === 1) {
-        result ("paper")
+        console.log("paper")
     } else {
-        result ("scissors")
+        console.log("scissors")
     }
 }
 
 /* Global variables for button choices */
 
-/* Not sure about this */
-let rockBtn = document.querySelector(".rock-btn");
-let paperBtn = document.querySelector(".paper-btn");
-let scissorsBtn = document.querySelector(".scissors-btn");
-let btnChoices = [rockBtn, paperBtn, scissorsBtn];
-let caratCHoice 
-
-btnChoices.forEach(btnChoice => btnChoice.addEventListener("click", (e) => {
-    caratChoice = e.target.id;
-}));
-
-function caratPlay() {
-    let svtChoose = seventeenPlay();
-
-    /* Carat choose button */
-    let caratPlayRock = document.querySelector(".carat-rock-btn");
-	let caratPlayPaper = document.querySelector(".carat-paper-btn");
-	let caratPlayScissors = document.querySelector(".carat-scissors-btn");
-
-    /* Seventeen choose button */
-    let svtPlayRock = document.querySelector(".svt-rock-btn");
-    let svtPlayPaper = document.querySelector(".svt-paper-btn");
-    let svtPlayScissors = document.querySelector(".svt-scissors-btn");
-}
+const playerRockBtn = document.querySelector(".carat-rock");
+const playerPaperBtn = document.querySelector(".carat-paper");
+const playerScissorsBtn = document.querySelector(".carat-scissors");
+let choicesArray = [playerRockBtn, playerPaperBtn, playerScissorsBtn];
+//- Click each button, should console.log rock paper or scissors
+choicesArray.forEach(choicesBtn => {
+	choicesBtn.addEventListener('click', event => {
+        let targetBtn = event.target;
+        // console.log("It worked");
+        // targetBtn.classList.toggle('clicked-btn');
+        if(targetBtn.classList.contains("carat-rock")){
+            playerRockBtn.classList.toggle("clicked-btn");
+            playerPaperBtn.classList.remove("clicked-btn");
+            playerScissorsBtn.classList.remove("clicked-btn");
+            // return("rock");
+            console.log("rock");
+        }
+        if(targetBtn.classList.contains("carat-paper")){
+            playerPaperBtn.classList.toggle("clicked-btn");
+            playerRockBtn.classList.remove("clicked-btn");
+            playerScissorsBtn.classList.remove("clicked-btn");
+            // return("paper");
+            console.log("paper");
+        }
+        if(targetBtn.classList.contains("carat-scissors")){
+            playerScissorsBtn.classList.toggle("clicked-btn");
+            playerRockBtn.classList.remove("clicked-btn");
+            playerPaperBtn.classList.remove("clicked-btn");
+            // return("scissors");
+            console.log("scissors");
+        }
+	})
+});

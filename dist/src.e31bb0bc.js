@@ -243,42 +243,52 @@ function seventeenPlay() {
   var svtPlayRandomNum = Math.floor(Math.random() * 3);
 
   if (svtPlayRandomNum === 0) {
-    result("rock");
+    // result ("rock")
+    console.log("rock");
   } else if (svtPlayRandomNum === 1) {
-    result("paper");
+    console.log("paper");
   } else {
-    result("scissors");
+    console.log("scissors");
   }
 }
 /* Global variables for button choices */
 
-/* Not sure about this */
 
+var playerRockBtn = document.querySelector(".carat-rock");
+var playerPaperBtn = document.querySelector(".carat-paper");
+var playerScissorsBtn = document.querySelector(".carat-scissors");
+var choicesArray = [playerRockBtn, playerPaperBtn, playerScissorsBtn]; //- Click each button, should console.log rock paper or scissors
 
-var rockBtn = document.querySelector(".rock-btn");
-var paperBtn = document.querySelector(".paper-btn");
-var scissorsBtn = document.querySelector(".scissors-btn");
-var btnChoices = [rockBtn, paperBtn, scissorsBtn];
-var caratCHoice;
-btnChoices.forEach(function (btnChoice) {
-  return btnChoice.addEventListener("click", function (e) {
-    caratChoice = e.target.id;
+choicesArray.forEach(function (choicesBtn) {
+  choicesBtn.addEventListener('click', function (event) {
+    var targetBtn = event.target; // console.log("It worked");
+    // targetBtn.classList.toggle('clicked-btn');
+
+    if (targetBtn.classList.contains("carat-rock")) {
+      playerRockBtn.classList.toggle("clicked-btn");
+      playerPaperBtn.classList.remove("clicked-btn");
+      playerScissorsBtn.classList.remove("clicked-btn"); // return("rock");
+
+      console.log("rock");
+    }
+
+    if (targetBtn.classList.contains("carat-paper")) {
+      playerPaperBtn.classList.toggle("clicked-btn");
+      playerRockBtn.classList.remove("clicked-btn");
+      playerScissorsBtn.classList.remove("clicked-btn"); // return("paper");
+
+      console.log("paper");
+    }
+
+    if (targetBtn.classList.contains("carat-scissors")) {
+      playerScissorsBtn.classList.toggle("clicked-btn");
+      playerRockBtn.classList.remove("clicked-btn");
+      playerPaperBtn.classList.remove("clicked-btn"); // return("scissors");
+
+      console.log("scissors");
+    }
   });
 });
-
-function caratPlay() {
-  var svtChoose = seventeenPlay();
-  /* Carat choose button */
-
-  var caratPlayRock = document.querySelector(".carat-rock-btn");
-  var caratPlayPaper = document.querySelector(".carat-paper-btn");
-  var caratPlayScissors = document.querySelector(".carat-scissors-btn");
-  /* Seventeen choose button */
-
-  var svtPlayRock = document.querySelector(".svt-rock-btn");
-  var svtPlayPaper = document.querySelector(".svt-paper-btn");
-  var svtPlayScissors = document.querySelector(".svt-scissors-btn");
-}
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -307,7 +317,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39927" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36829" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
