@@ -246,6 +246,31 @@ getRenameClass.addEventListener("click", function caratNameInput() {
   var getCaratName = prompt("What's your name?");
   caratCardName.textContent = getCaratName; // Code for characters limit on names
 });
+/* Generate random numbers for computer play */
+
+function computerPlay() {
+  var computerSelection = Math.floor(Math.random() * 4);
+  var computerChoices = ["rock", "paper", "scissors"];
+
+  if (computerSelection === 1) {
+    console.log(computerChoices[0]);
+  }
+
+  if (computerSelection === 2) {
+    console.log(computerChoices[1]);
+  }
+
+  if (computerSelection === 3) {
+    console.log(computerChoices[2]);
+  }
+}
+/* Main Game */
+
+
+function playRound(playerSelect, computerSelect) {
+  computerSelect = computerPlay();
+  playerSelect = this.dataset.button;
+}
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -274,7 +299,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40089" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37111" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

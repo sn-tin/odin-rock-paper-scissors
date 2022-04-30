@@ -93,3 +93,25 @@ getRenameClass.addEventListener("click", function caratNameInput() {
     // Code for characters limit on names
 });
 
+/* Generate random numbers for computer play */
+
+function computerPlay() {
+    let computerSelection = Math.floor(Math.random() * 4);
+    let computerChoices = ["rock", "paper", "scissors"]
+    if (computerSelection === 1) {
+        console.log(computerChoices[0])
+    }
+    if (computerSelection === 2) {
+        console.log(computerChoices[1])
+    }
+    if (computerSelection === 3) {
+        console.log(computerChoices[2])
+    }
+}
+
+/* Main Game */
+
+function playRound(playerSelect, computerSelect) {
+    computerSelect = computerPlay();
+    playerSelect = this.dataset.button;
+}
