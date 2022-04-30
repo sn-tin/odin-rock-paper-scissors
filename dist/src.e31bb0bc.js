@@ -155,78 +155,77 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 
   for (var i = 0; i <= randomNumber; i++) {
     var svtImage = document.querySelector(".svt-img");
-
-    var _svtName = document.querySelector(".svt-name");
+    var svtName = document.querySelector(".svt-name");
 
     switch (true) {
       case i === 1:
         svtImage.src = require("./images/svt-pilot-1.jpg");
-        _svtName.textContent = "Seungcheol";
+        svtName.textContent = "Seungcheol";
         break;
 
       case i === 2:
         svtImage.src = require("./images/svt-pilot-2.jpg");
-        _svtName.textContent = "Jeonghan";
+        svtName.textContent = "Jeonghan";
         break;
 
       case i === 3:
         svtImage.src = require("./images/svt-pilot-3.jpg");
-        _svtName.textContent = "Joshua";
+        svtName.textContent = "Joshua";
         break;
 
       case i === 4:
         svtImage.src = require("./images/svt-pilot-4.jpg");
-        _svtName.textContent = "Junhui";
+        svtName.textContent = "Junhui";
         break;
 
       case i === 5:
         svtImage.src = require("./images/svt-pilot-5.jpg");
-        _svtName.textContent = "Hoshi";
+        svtName.textContent = "Hoshi";
         break;
 
       case i === 6:
         svtImage.src = require("./images/svt-pilot-6.jpg");
-        _svtName.textContent = "Wonwoo";
+        svtName.textContent = "Wonwoo";
         break;
 
       case i === 7:
         svtImage.src = require("./images/svt-pilot-7.jpg");
-        _svtName.textContent = "Jihoon";
+        svtName.textContent = "Jihoon";
         break;
 
       case i === 8:
         svtImage.src = require("./images/svt-pilot-8.jpg");
-        _svtName.textContent = "Minghao";
+        svtName.textContent = "Minghao";
         break;
 
       case i == 9:
         svtImage.src = require("./images/svt-pilot-9.jpg");
-        _svtName.textContent = "Mingyu";
+        svtName.textContent = "Mingyu";
         break;
 
       case i === 10:
         svtImage.src = require("./images/svt-pilot-10.jpg");
-        _svtName.textContent = "Dokyeom";
+        svtName.textContent = "Dokyeom";
         break;
 
       case i === 11:
         svtImage.src = require("./images/svt-pilot-11.jpg");
-        _svtName.textContent = "Seungkwan";
+        svtName.textContent = "Seungkwan";
         break;
 
       case i === 12:
         svtImage.src = require("./images/svt-pilot-12.jpg");
-        _svtName.textContent = "Vernon";
+        svtName.textContent = "Vernon";
         break;
 
       case i === 13:
         svtImage.src = require("./images/svt-pilot-13.jpg");
-        _svtName.textContent = "Dino";
+        svtName.textContent = "Dino";
         break;
 
       default:
         svtImage.src = require("./images/svt-pilot-13.jpg");
-        _svtName.textContent = "Seventeen";
+        svtName.textContent = "Seventeen";
         break;
     }
   }
@@ -238,111 +237,6 @@ document.querySelector(".rename").addEventListener("click", function caratNameIn
   var getCaratName = prompt("What's your name?");
   caratCardName.textContent = getCaratName; // Code for characters limit on names
 });
-/* Player Selection */
-
-function playerSelect() {
-  var playerRockBtn = document.querySelector(".carat-rock-btn");
-  var playerPaperBtn = document.querySelector(".carat-paper-btn");
-  var playerScissorsBtn = document.querySelector(".carat-scissors-btn");
-  var choicesArray = [playerRockBtn, playerPaperBtn, playerScissorsBtn]; //- Click each button, should console.log rock paper or scissors
-
-  choicesArray.forEach(function (choicesBtn) {
-    choicesBtn.addEventListener('click', function (event) {
-      var targetBtn = event.target;
-
-      if (targetBtn.classList.contains("carat-rock-btn")) {
-        playerRockBtn.classList.add("clicked-btn");
-        playerPaperBtn.classList.remove("clicked-btn");
-        playerScissorsBtn.classList.remove("clicked-btn"); // return("rock");
-
-        console.log("rock");
-      }
-
-      if (targetBtn.classList.contains("carat-paper-btn")) {
-        playerPaperBtn.classList.add("clicked-btn");
-        playerRockBtn.classList.remove("clicked-btn");
-        playerScissorsBtn.classList.remove("clicked-btn"); // return("paper");
-
-        console.log("paper");
-      }
-
-      if (targetBtn.classList.contains("carat-scissors-btn")) {
-        playerScissorsBtn.classList.add("clicked-btn");
-        playerRockBtn.classList.remove("clicked-btn");
-        playerPaperBtn.classList.remove("clicked-btn"); // return("scissors");
-
-        console.log("scissors");
-      }
-    });
-  });
-}
-/* SEVENTEEN (computer) Play */
-
-
-function computerSelect() {
-  var computerRockBtn = document.querySelector("svt-rock-btn");
-  var computerPaperBtn = document.querySelector("svt-paper-btn");
-  var computerScissorsBtn = document.querySelector("svt-scissors-btn");
-  /* Generate random numbers */
-
-  var svtPlayRandomNum = Math.floor(Math.random() * 3) + 1;
-
-  if (svtPlayRandomNum === 1) {
-    // return ("rock")
-    // computerRockBtn.classList.add("clicked-btn");
-    // computerPaperBtn.classList.remove("clicked-btn");
-    // computerScissorsBtn.classList.remove("clicked-btn");
-    console.log("rock");
-  } else if (svtPlayRandomNum === 2) {
-    // return("paper")
-    // computerRockBtn.classList.remove("clicked-btn");
-    // computerPaperBtn.classList.add("clicked-btn");
-    // computerScissorsBtn.classList.remove("clicked-btn");
-    console.log("paper");
-  } else if (svtPlayRandomNum === 3) {
-    // return("scissors")
-    // computerRockBtn.classList.remove("clicked-btn");
-    // computerPaperBtn.classList.remove("clicked-btn");
-    // computerScissorsBtn.classList.add("clicked-btn");
-    console.log("scissors");
-  }
-}
-/* Actual Game */
-
-
-function playRound() {
-  var playerSelection = playerSelect();
-  console.log(playerSelection);
-  var computerSelection = computerSelect();
-
-  if (computerSelection === playerSelection) {
-    console.log("It's a tie!");
-
-    if (playerSelection === "rock") {
-      if (computerSelection === "paper") {
-        console.log(svtName + " won this round");
-      } else if (computerSelection === "scissors") {
-        console.log(getCaratName + " won this round");
-      } // }
-
-    } else if (playerSelection === "paper") {
-      if (computerSelection === "rock") {
-        console.log(getCaratName + " won this round!");
-      } else if (computerSelection === "scissors") {
-        console.log(svtName + " won this round");
-      } // }
-
-    } else if (playerSelection === "scissors") {
-      if (computerSelection === "rock") {
-        console.log(svtName + " won this round!");
-      } else if (computerSelection === "paper") {
-        console.log(getCaratName + " won this round!");
-      }
-    }
-  }
-}
-
-console.log(playRound()); // console.log(playRound(playerSelection, computerSelection));
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -371,7 +265,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46773" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36735" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
