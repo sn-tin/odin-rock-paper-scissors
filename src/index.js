@@ -77,7 +77,7 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 /* Carat's Name Input */
 
 document.querySelector(".rename").addEventListener("click", function caratNameInput() {
-    const caratCardName = document.querySelector(".carat-name");
+    const caratCardName = document.querySelector(".player-name");
     const getCaratName = prompt("What's your name?");
     
     caratCardName.textContent = getCaratName;

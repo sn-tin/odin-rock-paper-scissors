@@ -233,7 +233,7 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 /* Carat's Name Input */
 
 document.querySelector(".rename").addEventListener("click", function caratNameInput() {
-  var caratCardName = document.querySelector(".carat-name");
+  var caratCardName = document.querySelector(".player-name");
   var getCaratName = prompt("What's your name?");
   caratCardName.textContent = getCaratName; // Code for characters limit on names
 });
@@ -265,7 +265,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36735" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44193" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

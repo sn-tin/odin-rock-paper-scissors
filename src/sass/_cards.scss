@@ -63,30 +63,12 @@
     background-color: $white;
 }
 
-.score {
-    display: flex;
-    flex-direction: row;
-    // justify-content: space-evenly;
-    align-items: center;
-    // width: 200px;
-    margin: 5px auto;
-    background-color: $gray;
+.card-name {
+    background-color: $serenity;
+    text-transform: uppercase;
     border: 3px solid $black;
     border-radius: 20px;
     box-shadow: inset -3px 3px hsla(0, 0%, 0%, 0.25);
-}
-
-.score-number {
-    font-size: clamp(0.5rem , 2.5vw, 1rem);
-    margin-bottom: 0;
-    width: 75px;
-}
-
-.score-label {
-    @extend .score-number;
-    background-color: $serenity;
-    border-radius: 20px;
-    border-right: 3px solid $black;
 }
 
 .carat-img {
@@ -105,7 +87,7 @@
     margin: 5px 0 0;
 }
 
-.carat-name {
+.player-name {
     font-family: $small-font;
     font-size: clamp(0.5rem , 2.5vw, 1rem);
     text-transform: uppercase;
@@ -203,14 +185,14 @@
     box-shadow: -10px 10px hsla(0, 0%, 0%, 0.25);
     @extend .carat-card;
 
-    .score-label {
+    .card-name {
         background-color: $rose-quartz;
     }
 }
 
 .svt-name {
     background-color: $rose-quartz;
-    @extend .carat-name;
+    @extend .player-name;
 }
 
 .svt-img {

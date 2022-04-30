@@ -148,27 +148,12 @@ main {
   background-color: hsl(0deg, 0%, 100%);
 }
 
-.score {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 5px auto;
-  background-color: hsl(0deg, 18%, 93%);
+.card-name {
+  background-color: hsl(218deg, 40%, 69%);
+  text-transform: uppercase;
   border: 3px solid hsl(0deg, 0%, 0%);
   border-radius: 20px;
   box-shadow: inset -3px 3px hsla(0deg, 0%, 0%, 0.25);
-}
-
-.score-number, .score-label {
-  font-size: clamp(0.5rem, 2.5vw, 1rem);
-  margin-bottom: 0;
-  width: 75px;
-}
-
-.score-label {
-  background-color: hsl(218deg, 40%, 69%);
-  border-radius: 20px;
-  border-right: 3px solid hsl(0deg, 0%, 0%);
 }
 
 .carat-img, .svt-img {
@@ -187,7 +172,7 @@ main {
   margin: 5px 0 0;
 }
 
-.carat-name, .svt-name {
+.player-name, .svt-name {
   font-family: "Changa";
   font-size: clamp(0.5rem, 2.5vw, 1rem);
   text-transform: uppercase;
@@ -271,7 +256,7 @@ main {
   background-color: hsl(218deg, 40%, 69%);
   box-shadow: -10px 10px hsla(0deg, 0%, 0%, 0.25);
 }
-.svt-card .score-label {
+.svt-card .card-name {
   background-color: hsl(1deg, 74%, 88%);
 }
 
