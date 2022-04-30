@@ -60,3 +60,39 @@
         margin-bottom: 0;
     }
 }
+
+/* Play Buttons */
+
+.play-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 20px;
+}
+
+.rock, .paper, .scissors {
+    border-radius: 10px;
+    border: 3px solid $black;
+    box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
+    width: 50px;
+    height: 50px;
+}
+
+.rock {
+    background-image: url("../images/hand-back-fist-solid.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.paper {
+    background-image: url("../images/hand-solid.svg");
+    @extend .rock;
+}
+
+.scissors {
+    background-image: url("../images/hand-scissors-solid.svg");
+    @extend .rock;
+}
