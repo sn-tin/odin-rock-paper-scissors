@@ -145,10 +145,18 @@ module.exports = "/svt-pilot-12.a05031c6.jpg";
 module.exports = "/svt-pilot-13.200ec595.jpg";
 },{}],"index.js":[function(require,module,exports) {
 /* Switch Seventeen Player */
-document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
+var getReloadClass = document.querySelector(".reload");
+var reloadBtn = document.querySelector('.reload-btn');
+getReloadClass.addEventListener("click", function svtNameReload(event) {
   /* Switch button animation */
-  this.classList.add("reload-btn-animation");
+  reloadBtn.classList.add("reload-btn-animation");
+
+  if (reloadBtn.classList.contains("reload-btn-animation")) {
+    getReloadClass.classList.add("clicked-btn");
+    getReloadClass.classList.remove("unclicked-btn");
+  }
   /* Generate random number to switch seventeen player */
+
 
   var randomNumber = Math.floor(Math.random() * 13) + 1;
   /* Randomly switch seventeen player */
@@ -232,7 +240,8 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 });
 /* Carat's Name Input */
 
-document.querySelector(".rename").addEventListener("click", function caratNameInput() {
+var getRenameClass = document.querySelector(".rename");
+getRenameClass.addEventListener("click", function caratNameInput() {
   var caratCardName = document.querySelector(".player-name");
   var getCaratName = prompt("What's your name?");
   caratCardName.textContent = getCaratName; // Code for characters limit on names
@@ -265,7 +274,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44193" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40023" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

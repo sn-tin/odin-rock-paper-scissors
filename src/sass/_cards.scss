@@ -23,23 +23,17 @@
     gap: 30px;
 }
 
-.rename {
-    border-radius: 10px;
-    background-color: $white;
-    border: 3px solid $black;
-    box-shadow: -5px 5px hsla(0, 0%, 0%, 0.25);
-}
-
-.rename:hover {
-    background-color: $rose-quartz;
-}
-
 .rename-btn {
-    width: 50px;
-    padding: 13px;
+    width: 30px;
     border: none;
+    border-right: 3px solid $black;
+    background-image: url("../images/pen-to-square-solid.svg");
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: transparent;
     transition: all 0.5s ease-in;
+    padding: 0 30px;
 }
 
 .carat-card {
@@ -64,14 +58,17 @@
 }
 
 .card-name {
+    // font-size: clamp(0.5rem , 2.5vw, 1.2rem);
+    font-size: clamp(0.5rem , 2.5vw, 1rem);
     background-color: $serenity;
     text-transform: uppercase;
     border: 3px solid $black;
-    border-radius: 20px;
-    box-shadow: inset -3px 3px hsla(0, 0%, 0%, 0.25);
+    border-radius: 10px;
+    padding: 2px;
 }
 
 .carat-img {
+    width: 62px;
     border-radius: 50%;
     border: 3px solid $black;
     margin: 10px auto;
@@ -83,7 +80,7 @@
     background-color: $gray;
     border-radius: 20px;
     border: 3px solid $black;
-    box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
+    // box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
     margin: 5px 0 0;
 }
 
@@ -96,6 +93,43 @@
     border-bottom: 3px solid $black;
     padding: 3px;
 }
+
+.rename {
+    border-radius: 0 0 0 15px;
+    width: 30px;
+    border: none;
+    border-right: 3px solid $black;
+    background-image: url("../images/pen-to-square-solid.svg");
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 0 30px;
+}
+
+.monitoring {
+    display: flex;
+    flex-direction: row;
+}
+
+.scoreboard {
+    width: 100%;
+    margin: 0 auto;
+    .score-heading {
+        padding-bottom: 2px;
+        border-bottom: 3px solid $black;
+        // background-color: $rose-quartz;
+    }
+    .score-count {
+        border-radius: 0 0 20px 0;
+        background-color: white;
+        padding: 10px 0;
+        font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+        box-shadow: inset -5px 5px hsla(0, 0%, 0%, 0.25);
+    }
+}
+
+
 
 .play-buttons {
     display: flex;
@@ -112,7 +146,6 @@
     box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
     width: 50px;
     height: 50px;
-    padding: 10px; // to remove
 }
 
 .rock {
@@ -132,13 +165,14 @@
     @extend .rock;
 }
 
+.unclicked-btn {
+    box-shadow: inset 0 -5px hsl(0deg 0% 0% / 25%);
+    border-radius: 0 0 0 15px;
+}
+
 .clicked-btn {
-    // border-radius: 10px;
-    // border: 3px solid $black;
-    box-shadow: inset 5px 5px hsla(0, 0%, 0%, 0.25);
-//     width: 50px;
-//     height: 50px;
-    padding: 10px;
+    box-shadow: inset -5px 5px hsla(0, 0%, 0%, 0.25);
+    // padding: 10px;
 }
 
 /* SEVENTEEN Card */
@@ -155,22 +189,20 @@
 // Reload button attributes
 
 .reload {
-    border-radius: 10px;
-    background-color: $white;
-    border: 3px solid $black;
-    box-shadow: 5px 5px hsla(0, 0%, 0%, 0.25);
-}
-
-.reload:hover {
-    background-color: $serenity;
+    width: 63px;
+    border-right: 3px solid $black;
 }
 
 .reload-btn {
-    width: 50px;
-    padding: 13px;
+    height: 100%;
     border: none;
+    background-image: url("../images/arrows-rotate-solid.svg");
     background-color: transparent;
-    transition: all 0.2s ease-in;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 30px;
+    margin: 0 auto;
 }
 
 // To add using JavaScript
@@ -196,7 +228,7 @@
 }
 
 .svt-img {
-    width: 84px;
+    // width: 62px;
     @extend .carat-img;
 }
 

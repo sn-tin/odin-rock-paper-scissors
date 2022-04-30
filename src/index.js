@@ -1,7 +1,15 @@
 /* Switch Seventeen Player */
-document.querySelector(".reload-btn").addEventListener("click", function svtNameReload(event) {
+let getReloadClass = document.querySelector(".reload");
+let reloadBtn = document.querySelector('.reload-btn');
+
+getReloadClass.addEventListener("click", function svtNameReload(event) {
     /* Switch button animation */
-    this.classList.add("reload-btn-animation");
+    reloadBtn.classList.add("reload-btn-animation");
+    if(reloadBtn.classList.contains("reload-btn-animation")) {
+        getReloadClass.classList.add("clicked-btn");
+        getReloadClass.classList.remove("unclicked-btn");
+    }
+
 
     /* Generate random number to switch seventeen player */
 
@@ -76,12 +84,12 @@ document.querySelector(".reload-btn").addEventListener("click", function svtName
 
 /* Carat's Name Input */
 
-document.querySelector(".rename").addEventListener("click", function caratNameInput() {
+let getRenameClass = document.querySelector(".rename");
+
+getRenameClass.addEventListener("click", function caratNameInput() {
     const caratCardName = document.querySelector(".player-name");
     const getCaratName = prompt("What's your name?");
-    
     caratCardName.textContent = getCaratName;
-
     // Code for characters limit on names
 });
 

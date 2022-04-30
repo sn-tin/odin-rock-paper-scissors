@@ -11,10 +11,12 @@ body {
 
 h1, h2 {
     font-family: $big-font;
+    margin-bottom: 0;
 }
 
 h3, p {
     font-family: $small-font;
+    margin-bottom: 0;
 }
 
 main {
