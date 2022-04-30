@@ -68,17 +68,17 @@ main {
 
 /* Result */
 .result {
-  width: 620px;
+  width: 550px;
   margin: 50px auto;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 5px;
   border: 3px solid hsl(0deg, 0%, 0%);
 }
 .result .round-label {
-  width: 25%;
-  font-size: clamp(0.875rem, 2.5vw, 1.2rem);
+  width: 150px;
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
   margin-bottom: 0;
-  padding: 5px 30px;
+  padding: 5px 10px;
   text-align: center;
   border-right: 3px solid hsl(0deg, 0%, 0%);
   background: linear-gradient(90deg, rgb(255, 220, 219) 0%, rgb(180, 200, 234) 100%);
@@ -121,6 +121,24 @@ main {
   background-image: url("/hand-scissors-solid.319e8f1c.svg");
 }
 
+/* Media Query for Mobile */
+@media screen and (max-width: 375px) {
+  .container {
+    margin: 25px auto;
+  }
+
+  .result {
+    margin: 20px auto;
+    width: 85%;
+  }
+  .result .round-label {
+    width: 100px;
+  }
+
+  .play-buttons {
+    transform: scale(0.8);
+  }
+}
 .players-card {
   display: flex;
   flex-direction: row;
@@ -137,13 +155,6 @@ main {
 }
 
 /* CARAT Card */
-.card-rename-flex {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 30px;
-}
-
 .rename-btn {
   width: 30px;
   border: none;
@@ -194,13 +205,12 @@ main {
   margin: 10px auto;
 }
 
-.buttons {
+.play-info {
   display: flex;
   flex-direction: column;
   background-color: hsl(0deg, 18%, 93%);
   border-radius: 20px;
   border: 3px solid hsl(0deg, 0%, 0%);
-  margin: 5px 0 0;
 }
 
 .player-name, .svt-name {
@@ -244,7 +254,6 @@ main {
   background-color: white;
   padding: 10px 0;
   font-size: clamp(0.9rem, 2.5vw, 1.5rem);
-  box-shadow: inset -5px 5px hsla(0deg, 0%, 0%, 0.25);
 }
 
 .unclicked-btn {
@@ -257,13 +266,6 @@ main {
 }
 
 /* SEVENTEEN Card */
-.card-reload-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-}
-
 .reload {
   width: 63px;
   border-right: 3px solid hsl(0deg, 0%, 0%);
@@ -274,7 +276,7 @@ main {
   border: none;
   background-image: url("/arrows-rotate-solid.2f33d399.svg");
   background-color: transparent;
-  background-size: 25px;
+  background-size: 20px;
   background-repeat: no-repeat;
   background-position: center center;
   padding: 30px;
@@ -298,16 +300,32 @@ main {
   background-color: hsl(1deg, 74%, 88%);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
   .players-card {
     flex-direction: column;
     gap: 10px;
+    transform: scale(0.8);
+  }
+  .players-card h2 {
+    display: none;
+  }
+
+  .play-info {
+    border-radius: 5px;
+  }
+
+  .carat-card, .svt-card {
+    box-shadow: 5px 5px hsla(0deg, 0%, 0%, 0.25);
+  }
+
+  .player-name, .svt-name {
+    border-radius: 0;
   }
 
   .card-reload-flex {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 0;
   }
 }
 

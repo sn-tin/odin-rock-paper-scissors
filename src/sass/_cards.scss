@@ -16,12 +16,12 @@
 
 /* CARAT Card */
 
-.card-rename-flex {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 30px;
-}
+// .card-rename-flex {
+//     display: flex;
+//     flex-direction: row-reverse;
+//     align-items: center;
+//     gap: 30px;
+// }
 
 .rename-btn {
     width: 30px;
@@ -74,14 +74,13 @@
     margin: 10px auto;
 }
 
-.buttons {
+.play-info {
     display: flex;
     flex-direction: column;
     background-color: $gray;
     border-radius: 20px;
     border: 3px solid $black;
     // box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
-    margin: 5px 0 0;
 }
 
 .player-name {
@@ -118,14 +117,12 @@
     .score-heading {
         padding-bottom: 2px;
         border-bottom: 3px solid $black;
-        // background-color: $rose-quartz;
     }
     .score-count {
         border-radius: 0 0 20px 0;
         background-color: white;
         padding: 10px 0;
         font-size: clamp(0.9rem, 2.5vw, 1.5rem);
-        box-shadow: inset -5px 5px hsla(0, 0%, 0%, 0.25);
     }
 }
 
@@ -136,19 +133,18 @@
 
 .clicked-btn {
     box-shadow: inset -5px 5px hsla(0, 0%, 0%, 0.25);
-    // padding: 10px;
 }
 
 /* SEVENTEEN Card */
 
 // Flex svt card and reload button
 
-.card-reload-flex {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
-}
+// .card-reload-flex {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     gap: 30px;
+// }
 
 // Reload button attributes
 
@@ -162,7 +158,7 @@
     border: none;
     background-image: url("../images/arrows-rotate-solid.svg");
     background-color: transparent;
-    background-size: 25px;
+    background-size: 20px;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 30px;
@@ -196,16 +192,32 @@
     @extend .carat-img;
 }
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
     .players-card {
         flex-direction: column;
         gap: 10px;
+        transform: scale(0.8);
+        h2 {
+            display: none;
+        }
+    }
+
+    .play-info {
+        border-radius: 5px;
+    }
+
+    .carat-card {
+        box-shadow: 5px 5px hsla(0, 0%, 0%, 0.25);
+    }
+
+    .player-name {
+        border-radius: 0;
     }
 
     .card-reload-flex {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 0;
     }
+
 }

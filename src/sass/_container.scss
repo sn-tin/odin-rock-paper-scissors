@@ -41,16 +41,16 @@
 /* Result */
 
 .result {
-    width: 620px;
+    width: 550px;
     margin: 50px auto;
     background-color: $white;
     border-radius: 5px;
     border: 3px solid $black;
     .round-label {
-        width: 25%;
-        font-size: clamp(0.875rem, 2.5vw, 1.2rem);
+        width: 150px;
+        font-size: clamp(0.8rem, 2.5vw, 1.2rem);
         margin-bottom: 0;
-        padding: 5px 30px;
+        padding: 5px 10px;
         text-align: center;
         border-right: 3px solid $black;
         background: linear-gradient(90deg, rgba(255,220,219,1) 0%, rgba(180,200,234,1) 100%);
@@ -95,4 +95,22 @@
 .scissors {
     background-image: url("../images/hand-scissors-solid.svg");
     @extend .rock;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 375px) {
+    .container {
+        margin: 25px auto;
+        // transform: scale(0.8);
+    }
+    .result {
+        margin: 20px auto;
+        width: 85%;
+        .round-label {
+            width: 100px;
+        }
+    }
+    .play-buttons {
+        transform: scale(0.8);
+    }
 }
