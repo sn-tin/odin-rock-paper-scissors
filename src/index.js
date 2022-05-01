@@ -109,9 +109,30 @@ function computerPlay() {
     }
 }
 
+/* Assign rock, paper, scissors to each button */
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
+let btnChoices = [rockBtn, paperBtn, scissorsBtn];
+
+btnChoices.forEach(choices => 
+    {choices.addEventListener('click', function playerPlay(e) {
+        let targetBtn = e.target;
+
+        if(targetBtn.classList.contains("rock")){
+            console.log("rock");
+        }
+        if(targetBtn.classList.contains("paper")){
+            console.log("paper");
+        }
+        if(targetBtn.classList.contains("scissors")){
+            console.log("scissors");
+        }
+    })})
+
 /* Main Game */
 
 function playRound(playerSelect, computerSelect) {
     computerSelect = computerPlay();
-    playerSelect = this.dataset.button;
+    playerSelect = playerPlay(e);
 }

@@ -264,12 +264,35 @@ function computerPlay() {
     console.log(computerChoices[2]);
   }
 }
-/* Main Game */
+/* Assign rock, paper, scissors to each button */
 
+
+var rockBtn = document.querySelector(".rock");
+var paperBtn = document.querySelector(".paper");
+var scissorsBtn = document.querySelector(".scissors");
+var btnChoices = [rockBtn, paperBtn, scissorsBtn];
+btnChoices.forEach(function (choices) {
+  choices.addEventListener('click', function playerPlay(e) {
+    var targetBtn = e.target;
+
+    if (targetBtn.classList.contains("rock")) {
+      console.log("rock");
+    }
+
+    if (targetBtn.classList.contains("paper")) {
+      console.log("paper");
+    }
+
+    if (targetBtn.classList.contains("scissors")) {
+      console.log("scissors");
+    }
+  });
+});
+/* Main Game */
 
 function playRound(playerSelect, computerSelect) {
   computerSelect = computerPlay();
-  playerSelect = this.dataset.button;
+  playerSelect = playerPlay(e);
 }
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -299,7 +322,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41011" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39619" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
