@@ -152,7 +152,8 @@ function playRound(playerSelect, computerSelect) {
     } else if(playerSelect === "rock"){
         if(computerSelect === "paper") {
             result.textContent = (svtName + " won this round!");
-            computerScoreNum.textContent = computerScore++;
+            computerScore++
+            computerScoreNum.textContent = computerScore;
         } else {
             result.textContent = (caratCardName + " won this round!");
             playerScoreNum.textContent = playerScore++;
@@ -160,19 +161,23 @@ function playRound(playerSelect, computerSelect) {
     } else if(playerSelect === "paper"){
         if(computerSelect === "scissors"){
             result.textContent = (svtName + " won this round!");
-            playerScoreNum.textContent = playerScore++;
+            playerScore++
+            playerScoreNum.textContent = playerScore;
         }
         else {
             result.textContent = (caratCardName + " won this round!");
-            playerScoreNum.textContent = playerScore++;
+            playerScore++
+            playerScoreNum.textContent = playerScore;
         }
     } else if(playerSelect === "scissors"){
         if (computerSelect ===  "rock") {
             result.textContent = (svtName + " won this round!");
-            computerScoreNum.textContent = computerScore++;
+            computerScore++
+            computerScoreNum.textContent = computerScore;
         } else {
             result.textContent = (caratCardName + " won this round!");
-            playerScoreNum.textContent = playerScore++;
+            playerScore++
+            playerScoreNum.textContent = playerScore;
         }
     }
 }

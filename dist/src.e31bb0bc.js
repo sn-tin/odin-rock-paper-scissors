@@ -309,16 +309,32 @@ function playRound(playerSelect, computerSelect) {
     result.textContent = "It's a tie!";
   } else if (playerSelect === "rock") {
     if (computerSelect === "paper") {
+      result.textContent = svtName + " won this round!";
+      computerScore++;
+      computerScoreNum.textContent = computerScore;
+    } else {
       result.textContent = caratCardName + " won this round!";
       playerScoreNum.textContent = playerScore++;
-    } else {
-      result.textContent = svtName + " won this round!";
-      computerScoreNum.textContent = playerScore++;
     }
   } else if (playerSelect === "paper") {
+    if (computerSelect === "scissors") {
+      result.textContent = svtName + " won this round!";
+      playerScore++;
+      playerScoreNum.textContent = playerScore;
+    } else {
+      result.textContent = caratCardName + " won this round!";
+      playerScore++;
+      playerScoreNum.textContent = playerScore;
+    }
+  } else if (playerSelect === "scissors") {
     if (computerSelect === "rock") {
       result.textContent = svtName + " won this round!";
-      playerScoreNum.textContent = playerScore++;
+      computerScore++;
+      computerScoreNum.textContent = computerScore;
+    } else {
+      result.textContent = caratCardName + " won this round!";
+      playerScore++;
+      playerScoreNum.textContent = playerScore;
     }
   }
 }
@@ -350,7 +366,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41607" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40747" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
