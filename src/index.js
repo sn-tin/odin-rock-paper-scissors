@@ -1,6 +1,11 @@
 /* Switch Seventeen Player */
-let getReloadClass = document.querySelector(".reload");
-let reloadBtn = document.querySelector('.reload-btn');
+let getReloadClass = document.querySelector(".reload"); // div for reload
+let reloadBtn = document.querySelector('.reload-btn'); // button for reload
+
+/* Select image of seventeen player */
+let svtImage = document.querySelector(".svt-img");
+/* Select name of seventeen player */
+let svtName = document.querySelector(".svt-name");
 
 getReloadClass.addEventListener("click", function svtNameReload(event) {
     /* Switch button animation */
@@ -17,9 +22,6 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
     /* Randomly switch seventeen player */
 
     for( let i = 0; i <= randomNumber; i++) {
-
-		let svtImage = document.querySelector(".svt-img");
-		let svtName = document.querySelector(".svt-name");
 
 		switch(true) {
 			case (i === 1):
@@ -85,13 +87,35 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 /* Carat's Name Input */
 
 let getRenameClass = document.querySelector(".rename");
+const caratCardName = document.querySelector(".player-name");
 
-getRenameClass.addEventListener("click", function caratNameInput() {
-    const caratCardName = document.querySelector(".player-name");
+getRenameClass.addEventListener("click", function () {
     const getCaratName = prompt("What's your name?");
     caratCardName.textContent = getCaratName;
     // Code for characters limit on names
 });
+
+/* Assign rock, paper, scissors to each button */
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
+let btnChoices = [rockBtn, paperBtn, scissorsBtn];
+let targetBtn 
+
+btnChoices.forEach(choices => 
+    {choices.addEventListener('click', (e) => {
+        targetBtn = e.target;
+
+        if(targetBtn.classList.contains("rock")){
+            console.log("rock");
+        }
+        if(targetBtn.classList.contains("paper")){
+            console.log("paper");
+        }
+        if(targetBtn.classList.contains("scissors")){
+            console.log("scissors");
+        }
+    })})
 
 /* Generate random numbers for computer play */
 
@@ -109,30 +133,46 @@ function computerPlay() {
     }
 }
 
-/* Assign rock, paper, scissors to each button */
-const rockBtn = document.querySelector(".rock");
-const paperBtn = document.querySelector(".paper");
-const scissorsBtn = document.querySelector(".scissors");
-let btnChoices = [rockBtn, paperBtn, scissorsBtn];
-
-btnChoices.forEach(choices => 
-    {choices.addEventListener('click', function playerPlay(e) {
-        let targetBtn = e.target;
-
-        if(targetBtn.classList.contains("rock")){
-            console.log("rock");
-        }
-        if(targetBtn.classList.contains("paper")){
-            console.log("paper");
-        }
-        if(targetBtn.classList.contains("scissors")){
-            console.log("scissors");
-        }
-    })})
-
 /* Main Game */
 
 function playRound(playerSelect, computerSelect) {
+
+    playerSelect = targetBtn;
     computerSelect = computerPlay();
-    playerSelect = playerPlay(e);
+
+    let computerScore = 0;
+    let playerScore = 0;
+
+    const result = document.querySelector(".result-text");
+    const playerScoreNum = document.querySelector(".player-score");
+    const computerScoreNum = document.querySelector(".computer-score");
+
+    if(playerSelect === computerSelect) {
+        result.textContent = "It's a tie!"
+    } else if(playerSelect === "rock"){
+        if(computerSelect === "paper") {
+            result.textContent = (svtName + " won this round!");
+            computerScoreNum.textContent = computerScore++;
+        } else {
+            result.textContent = (caratCardName + " won this round!");
+            playerScoreNum.textContent = playerScore++;
+        }
+    } else if(playerSelect === "paper"){
+        if(computerSelect === "scissors"){
+            result.textContent = (svtName + " won this round!");
+            playerScoreNum.textContent = playerScore++;
+        }
+        else {
+            result.textContent = (caratCardName + " won this round!");
+            playerScoreNum.textContent = playerScore++;
+        }
+    } else if(playerSelect === "scissors"){
+        if (computerSelect ===  "rock") {
+            result.textContent = (svtName + " won this round!");
+            computerScoreNum.textContent = computerScore++;
+        } else {
+            result.textContent = (caratCardName + " won this round!");
+            playerScoreNum.textContent = playerScore++;
+        }
+    }
 }
