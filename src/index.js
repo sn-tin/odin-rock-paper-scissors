@@ -102,20 +102,68 @@ const scissorsBtn = document.querySelector(".scissors");
 let btnChoices = [rockBtn, paperBtn, scissorsBtn];
 let targetBtn 
 
-btnChoices.forEach(choices => 
-    {choices.addEventListener('click', (e) => {
-        targetBtn = e.target;
+function playButtons() {
+    btnChoices.forEach(choices => 
+        {choices.addEventListener('click', (e) => {
+            targetBtn = e.target;
+    
+            if(targetBtn.classList.contains("rock")){
+                console.log("rock");
+            }
+            if(targetBtn.classList.contains("paper")){
+                console.log("paper");
+            }
+            if(targetBtn.classList.contains("scissors")){
+                console.log("scissors");
+            }
+            
+            computerPlay();
 
-        if(targetBtn.classList.contains("rock")){
-            console.log("rock");
-        }
-        if(targetBtn.classList.contains("paper")){
-            console.log("paper");
-        }
-        if(targetBtn.classList.contains("scissors")){
-            console.log("scissors");
-        }
-    })})
+            const playerSelect = targetBtn;
+            const computerSelect = computerPlay();
+            
+            let computerScore = 0;
+            let playerScore = 0;
+        
+            const result = document.querySelector(".result-text");
+            const playerScoreNum = document.querySelector(".player-score");
+            const computerScoreNum = document.querySelector(".computer-score");
+        
+            if(playerSelect === computerSelect) {
+                result.textContent = "It's a tie!"
+            } else if(playerSelect === "rock"){
+                if(computerSelect === "paper") {
+                    result.textContent = (svtName + " won this round!");
+                    computerScore++
+                    computerScoreNum.textContent = computerScore;
+                } else {
+                    result.textContent = (caratCardName + " won this round!");
+                    playerScoreNum.textContent = playerScore++;
+                }
+            } else if(playerSelect === "paper"){
+                if(computerSelect === "scissors"){
+                    result.textContent = (svtName + " won this round!");
+                    playerScore++
+                    playerScoreNum.textContent = playerScore;
+                }
+                else {
+                    result.textContent = (caratCardName + " won this round!");
+                    playerScore++
+                    playerScoreNum.textContent = playerScore;
+                }
+            } else if(playerSelect === "scissors"){
+                if (computerSelect ===  "rock") {
+                    result.textContent = (svtName + " won this round!");
+                    computerScore++
+                    computerScoreNum.textContent = computerScore;
+                } else {
+                    result.textContent = (caratCardName + " won this round!");
+                    playerScore++
+                    playerScoreNum.textContent = playerScore;
+                }
+            }
+        })})
+}
 
 /* Generate random numbers for computer play */
 
@@ -133,51 +181,53 @@ function computerPlay() {
     }
 }
 
+console.log(playButtons());
+
 /* Main Game */
+// function playRound(playerSelect, computerSelect) {
 
-function playRound(playerSelect, computerSelect) {
+//     // playButtons(); 
+//     playerSelect = targetBtn;
+//     computerSelect = computerPlay();
+    
+//     let computerScore = 0;
+//     let playerScore = 0;
 
-    playerSelect = targetBtn;
-    computerSelect = computerPlay();
+//     const result = document.querySelector(".result-text");
+//     const playerScoreNum = document.querySelector(".player-score");
+//     const computerScoreNum = document.querySelector(".computer-score");
 
-    let computerScore = 0;
-    let playerScore = 0;
-
-    const result = document.querySelector(".result-text");
-    const playerScoreNum = document.querySelector(".player-score");
-    const computerScoreNum = document.querySelector(".computer-score");
-
-    if(playerSelect === computerSelect) {
-        result.textContent = "It's a tie!"
-    } else if(playerSelect === "rock"){
-        if(computerSelect === "paper") {
-            result.textContent = (svtName + " won this round!");
-            computerScore++
-            computerScoreNum.textContent = computerScore;
-        } else {
-            result.textContent = (caratCardName + " won this round!");
-            playerScoreNum.textContent = playerScore++;
-        }
-    } else if(playerSelect === "paper"){
-        if(computerSelect === "scissors"){
-            result.textContent = (svtName + " won this round!");
-            playerScore++
-            playerScoreNum.textContent = playerScore;
-        }
-        else {
-            result.textContent = (caratCardName + " won this round!");
-            playerScore++
-            playerScoreNum.textContent = playerScore;
-        }
-    } else if(playerSelect === "scissors"){
-        if (computerSelect ===  "rock") {
-            result.textContent = (svtName + " won this round!");
-            computerScore++
-            computerScoreNum.textContent = computerScore;
-        } else {
-            result.textContent = (caratCardName + " won this round!");
-            playerScore++
-            playerScoreNum.textContent = playerScore;
-        }
-    }
-}
+//     if(playerSelect === computerSelect) {
+//         result.textContent = "It's a tie!"
+//     } else if(playerSelect === "rock"){
+//         if(computerSelect === "paper") {
+//             result.textContent = (svtName + " won this round!");
+//             computerScore++
+//             computerScoreNum.textContent = computerScore;
+//         } else {
+//             result.textContent = (caratCardName + " won this round!");
+//             playerScoreNum.textContent = playerScore++;
+//         }
+//     } else if(playerSelect === "paper"){
+//         if(computerSelect === "scissors"){
+//             result.textContent = (svtName + " won this round!");
+//             playerScore++
+//             playerScoreNum.textContent = playerScore;
+//         }
+//         else {
+//             result.textContent = (caratCardName + " won this round!");
+//             playerScore++
+//             playerScoreNum.textContent = playerScore;
+//         }
+//     } else if(playerSelect === "scissors"){
+//         if (computerSelect ===  "rock") {
+//             result.textContent = (svtName + " won this round!");
+//             computerScore++
+//             computerScoreNum.textContent = computerScore;
+//         } else {
+//             result.textContent = (caratCardName + " won this round!");
+//             playerScore++
+//             playerScoreNum.textContent = playerScore;
+//         }
+//     }
+// }
