@@ -41,6 +41,8 @@
 /* Result */
 
 .result {
+    display: flex;
+    align-items: center;
     width: 550px;
     margin: 50px auto;
     background-color: $white;
@@ -54,6 +56,9 @@
         text-align: center;
         border-right: 3px solid $black;
         background: linear-gradient(90deg, rgba(255,220,219,1) 0%, rgba(180,200,234,1) 100%);
+    }
+    .result-text {
+        width: 100%;
     }
 }
 

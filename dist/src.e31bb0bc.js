@@ -149,12 +149,12 @@ var getReloadClass = document.querySelector(".reload"); // div for reload
 
 var reloadBtn = document.querySelector('.reload-btn'); // button for reload
 
-/* Select image of seventeen player */
+/* Variable for image of seventeen player */
 
-var svtImage = document.querySelector(".svt-img");
-/* Select name of seventeen player */
+var svtImage;
+/* Variable for name of seventeen player */
 
-var svtName = document.querySelector(".svt-name");
+var svtName = '';
 getReloadClass.addEventListener("click", function svtNameReload(event) {
   /* Switch button animation */
   reloadBtn.classList.add("reload-btn-animation");
@@ -170,6 +170,12 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
   /* Randomly switch seventeen player */
 
   for (var i = 0; i <= randomNumber; i++) {
+    /* Select image of seventeen player */
+    svtImage = document.querySelector(".svt-img");
+    /* Select name of seventeen player */
+
+    svtName = document.querySelector(".svt-name");
+
     switch (true) {
       case i === 1:
         svtImage.src = require("./images/svt-pilot-1.jpg");
@@ -246,145 +252,125 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 /* Carat's Name Input */
 
 var getRenameClass = document.querySelector(".rename");
-var caratCardName = document.querySelector(".player-name");
+var getCaratName;
 getRenameClass.addEventListener("click", function () {
-  var getCaratName = prompt("What's your name?");
+  var caratCardName = document.querySelector(".player-name");
+  getCaratName = prompt("What's your name?");
   caratCardName.textContent = getCaratName; // Code for characters limit on names
 });
-/* Assign rock, paper, scissors to each button */
+/* Generate random numbers for computer play */
+
+var computerSelection;
+var rock = "rock";
+var paper = "paper";
+var scissors = "scissors";
+
+function computerPlay() {
+  computerSelection = Math.floor(Math.random() * 3) + 1;
+  var computerChoices = [rock, paper, scissors];
+
+  if (computerSelection === 1) {
+    // console.log(computerChoices[0])
+    return computerChoices[0];
+  }
+
+  if (computerSelection === 2) {
+    // console.log(computerChoices[1])
+    return computerChoices[1];
+  }
+
+  if (computerSelection === 3) {
+    // console.log(computerChoices[2])
+    return computerChoices[2];
+  }
+}
 
 var rockBtn = document.querySelector(".rock");
 var paperBtn = document.querySelector(".paper");
 var scissorsBtn = document.querySelector(".scissors");
 var btnChoices = [rockBtn, paperBtn, scissorsBtn];
-var targetBtn;
+var playerSelection;
 
-function playButtons() {
+function playerButtons() {
   btnChoices.forEach(function (choices) {
     choices.addEventListener('click', function (e) {
-      targetBtn = e.target;
+      playerSelection = e.target;
 
-      if (targetBtn.classList.contains("rock")) {
+      if (playerSelection.classList.contains("rock")) {
+        playRound("rock");
         console.log("rock");
       }
 
-      if (targetBtn.classList.contains("paper")) {
+      if (playerSelection.classList.contains("paper")) {
+        playRound("paper");
         console.log("paper");
       }
 
-      if (targetBtn.classList.contains("scissors")) {
+      if (playerSelection.classList.contains("scissors")) {
+        playRound("scissors");
         console.log("scissors");
-      }
-
-      computerPlay();
-      var playerSelect = targetBtn;
-      var computerSelect = computerPlay();
-      var computerScore = 0;
-      var playerScore = 0;
-      var result = document.querySelector(".result-text");
-      var playerScoreNum = document.querySelector(".player-score");
-      var computerScoreNum = document.querySelector(".computer-score");
-
-      if (playerSelect === computerSelect) {
-        result.textContent = "It's a tie!";
-      } else if (playerSelect === "rock") {
-        if (computerSelect === "paper") {
-          result.textContent = svtName + " won this round!";
-          computerScore++;
-          computerScoreNum.textContent = computerScore;
-        } else {
-          result.textContent = caratCardName + " won this round!";
-          playerScoreNum.textContent = playerScore++;
-        }
-      } else if (playerSelect === "paper") {
-        if (computerSelect === "scissors") {
-          result.textContent = svtName + " won this round!";
-          playerScore++;
-          playerScoreNum.textContent = playerScore;
-        } else {
-          result.textContent = caratCardName + " won this round!";
-          playerScore++;
-          playerScoreNum.textContent = playerScore;
-        }
-      } else if (playerSelect === "scissors") {
-        if (computerSelect === "rock") {
-          result.textContent = svtName + " won this round!";
-          computerScore++;
-          computerScoreNum.textContent = computerScore;
-        } else {
-          result.textContent = caratCardName + " won this round!";
-          playerScore++;
-          playerScoreNum.textContent = playerScore;
-        }
       }
     });
   });
 }
-/* Generate random numbers for computer play */
 
+console.log(playerButtons());
+/* Main Game */
 
-function computerPlay() {
-  var computerSelection = Math.floor(Math.random() * 4);
-  var computerChoices = ["rock", "paper", "scissors"];
+function playRound(playerSelect) {
+  console.log(computerPlay());
+  var computerSelect = computerPlay();
+  var computerScore = 0;
+  var playerScore = 0;
+  var result = document.querySelector(".result-text");
+  var playerScoreNum = document.querySelector(".player-score");
+  var computerScoreNum = document.querySelector(".computer-score");
+  /* Select players name */
 
-  if (computerSelection === 1) {
-    console.log(computerChoices[0]);
-  }
+  var playerName = document.querySelector(".player-name").textContent;
+  var computerName = document.querySelector(".svt-name").textContent;
 
-  if (computerSelection === 2) {
-    console.log(computerChoices[1]);
-  }
-
-  if (computerSelection === 3) {
-    console.log(computerChoices[2]);
+  if (playerSelect === computerSelect) {
+    result.textContent = "It's a tie!";
+    console.log("It's a tie!");
+  } else if (playerSelect === "rock") {
+    if (computerSelect === "paper") {
+      result.textContent = computerName + " won this round!";
+      computerScore++;
+      computerScoreNum.textContent = computerScore;
+      console.log(computerName + " won this round!");
+    } else {
+      result.textContent = playerName + " won this round!";
+      playerScore++;
+      playerScoreNum.textContent = playerScore;
+      console.log(playerName + " won this round!");
+    }
+  } else if (playerSelect === "paper") {
+    if (computerSelect === "scissors") {
+      result.textContent = computerName + " won this round!";
+      computerScore++;
+      computerScoreNum.textContent = computerScore;
+      console.log(computerName + " won this round!");
+    } else {
+      result.textContent = playerName + " won this round!";
+      playerScore++;
+      computerScoreNum.textContent = playerScore;
+      console.log(playerName + " won this round!");
+    }
+  } else if (playerSelect === "scissors") {
+    if (computerSelect === "rock") {
+      result.textContent = computerName + " won this round!";
+      computerScore++;
+      computerScoreNum.textContent = computerScore;
+      console.log(computerName + " won this round!");
+    } else {
+      result.textContent = playerName + " won this round!";
+      playerScore++;
+      playerScoreNum.textContent = playerScore;
+      console.log(playerName + " won this round!");
+    }
   }
 }
-
-console.log(playButtons());
-/* Main Game */
-// function playRound(playerSelect, computerSelect) {
-//     // playButtons(); 
-//     playerSelect = targetBtn;
-//     computerSelect = computerPlay();
-//     let computerScore = 0;
-//     let playerScore = 0;
-//     const result = document.querySelector(".result-text");
-//     const playerScoreNum = document.querySelector(".player-score");
-//     const computerScoreNum = document.querySelector(".computer-score");
-//     if(playerSelect === computerSelect) {
-//         result.textContent = "It's a tie!"
-//     } else if(playerSelect === "rock"){
-//         if(computerSelect === "paper") {
-//             result.textContent = (svtName + " won this round!");
-//             computerScore++
-//             computerScoreNum.textContent = computerScore;
-//         } else {
-//             result.textContent = (caratCardName + " won this round!");
-//             playerScoreNum.textContent = playerScore++;
-//         }
-//     } else if(playerSelect === "paper"){
-//         if(computerSelect === "scissors"){
-//             result.textContent = (svtName + " won this round!");
-//             playerScore++
-//             playerScoreNum.textContent = playerScore;
-//         }
-//         else {
-//             result.textContent = (caratCardName + " won this round!");
-//             playerScore++
-//             playerScoreNum.textContent = playerScore;
-//         }
-//     } else if(playerSelect === "scissors"){
-//         if (computerSelect ===  "rock") {
-//             result.textContent = (svtName + " won this round!");
-//             computerScore++
-//             computerScoreNum.textContent = computerScore;
-//         } else {
-//             result.textContent = (caratCardName + " won this round!");
-//             playerScore++
-//             playerScoreNum.textContent = playerScore;
-//         }
-//     }
-// }
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -413,7 +399,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36843" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44835" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
