@@ -116,14 +116,23 @@ function playerButtons() {
             let playerSelection = e.target;
     
             if(playerSelection.classList.contains("rock")){
+                rockBtn.classList.add("clicked-btn");
+                paperBtn.classList.remove("clicked-btn");
+                scissorsBtn.classList.remove("clicked-btn");
                 playRound("rock");
                 console.log("rock");
             }
             if(playerSelection.classList.contains("paper")){
+                rockBtn.classList.remove("clicked-btn");
+                paperBtn.classList.add("clicked-btn");
+                scissorsBtn.classList.remove("clicked-btn");
                 playRound("paper");
                 console.log("paper");
             }
             if(playerSelection.classList.contains("scissors")){
+                rockBtn.classList.remove("clicked-btn");
+                paperBtn.classList.remove("clicked-btn");
+                scissorsBtn.classList.add("clicked-btn");
                 playRound("scissors");
                 console.log("scissors");
             }
@@ -134,6 +143,9 @@ console.log(playerButtons());
 
 
 /* Main Game */
+
+const result = document.querySelector(".result-text");
+
 function playRound(playerSelect) {
     const play = computerPlay();
     console.log(play);
@@ -141,7 +153,6 @@ function playRound(playerSelect) {
     let computerScore = 0;
     let playerScore = 0;
 
-    const result = document.querySelector(".result-text");
     const playerScoreNum = document.querySelector(".player-score");
     const computerScoreNum = document.querySelector(".computer-score");
 
@@ -154,59 +165,71 @@ function playRound(playerSelect) {
         console.log( "It's a tie!")
     } else if(playerSelect === "rock"){
         if(computerSelect === "paper") {
-            // result.textContent = (computerName + " won this round!");
             result.textContent = (computerName + " chose paper! " + playerName + " lost this round.");
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            // console.log(computerName + " won this round!");
             console.log(computerName + " chose paper! " + playerName + " lost this round.")
         } else {
-            // result.textContent = (playerName + " won this round!");
             result.textContent = (computerName + " chose scissors! " + playerName + " won this round.");
             playerScore++;
             playerScoreNum.textContent = playerScore;
 
-            // console.log(playerName + " won this round!");
             console.log(computerName + " chose scissors! " + playerName + " won this round.");
         }
     } else if(playerSelect === "paper"){
         if(computerSelect === "scissors"){
-            // result.textContent = (computerName + " won this round!");
             result.textContent = (computerName + " chose scissors! " + playerName + " lost this round.");
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            // console.log(computerName + " won this round!");
             console.log(computerName + " chose scissors! " + playerName + " lost this round.");
         } else {
-            // result.textContent = (playerName + " won this round!");
             result.textContent = (computerName + " chose rock! " + playerName + " won this round.");
             playerScore++
             computerScoreNum.textContent = playerScore;
 
             console.log(computerName + " chose rock! " + playerName + " won this round.");
-            // console.log(playerName + " won this round!");
         }
     } else if(playerSelect === "scissors"){
         if (computerSelect ===  "rock") {
-            // result.textContent = (computerName + " won this round!");
             result.textContent = (computerName + " chose rock! " + playerName + " lost this round.");
             computerScore++
             computerScoreNum.textContent = computerScore;
 
             console.log(computerName + " chose rock! " + playerName + " lost this round.");
-            // console.log(computerName + " won this round!");
         } else {
             result.textContent = (computerName + " chose paper! " + playerName + " won this round.");
-            // result.textContent = (playerName + " won this round!");
             playerScore++
             playerScoreNum.textContent = playerScore;
 
             console.log(computerName + " chose paper! " + playerName + " won this round.");
-            // console.log(playerName + " won this round!");
         }
     }
 }
 
-// function game()
+function game() {
+    /* Loop for 5 rounds of game */
+    const rounds = 0;
+    for(let i = 0; i < 5; i++) {
+        const numOfRounds = document.querySelector(".num-of-rounds");
+        rounds++
+        numOfRounds.textContent = rounds;
+        playRound();
+        if(i === rounds) {
+            if(playScore === computerScore) {
+                result.textContent = "It's a tie! Play again!";
+                console.log("It's a tie! Play again!");
+            } else if(playScore > computerScore) {
+                result.textContent = "You won! Baksu!";
+                console.log("You won! Baksu!");
+            } else {
+                result.textContent = "Seventeen Won! Try again next time!";
+                console.log("Seventeen Won! Try again next time!");
+            }
+        }
+    }
+}
+
+game();
+// console.log(game());
