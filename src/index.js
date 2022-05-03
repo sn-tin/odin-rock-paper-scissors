@@ -81,8 +81,9 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 });
 
 /* Player's Name Input */
+let getRenameClass = document.querySelector(".rename");
+
 getRenameClass.addEventListener("click", function () {
-    let getRenameClass = document.querySelector(".rename");
     let caratCardName = document.querySelector(".player-name");
     let getCaratName = prompt("What's your name?");
     caratCardName.textContent = getCaratName;
@@ -101,15 +102,16 @@ function computerPlay() {
         return("scissors")
     }
 }
+
 /* Return rock, paper or scissors when player clicked button */
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
+let btnChoices = [rockBtn, paperBtn, scissorsBtn];
+
 function playerButtons() {
     btnChoices.forEach(choices => 
         {choices.addEventListener('click', (e) => {
-
-            const rockBtn = document.querySelector(".rock");
-            const paperBtn = document.querySelector(".paper");
-            const scissorsBtn = document.querySelector(".scissors");
-            let btnChoices = [rockBtn, paperBtn, scissorsBtn];
 
             let playerSelection = e.target;
     
@@ -133,8 +135,9 @@ console.log(playerButtons());
 
 /* Main Game */
 function playRound(playerSelect) {
-    console.log(computerPlay());
-    let computerSelect = computerPlay();
+    const play = computerPlay();
+    console.log(play);
+    let computerSelect = play;
     let computerScore = 0;
     let playerScore = 0;
 
@@ -151,12 +154,15 @@ function playRound(playerSelect) {
         console.log( "It's a tie!")
     } else if(playerSelect === "rock"){
         if(computerSelect === "paper") {
-            result.textContent = (computerName + " chose paper! " + computerName + " won this round.");
+            // result.textContent = (computerName + " won this round!");
+            result.textContent = (computerName + " chose paper! " + playerName + " lost this round.");
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            console.log(computerName + " chose paper! " + computerName + " won this round.")
+            // console.log(computerName + " won this round!");
+            console.log(computerName + " chose paper! " + playerName + " lost this round.")
         } else {
+            // result.textContent = (playerName + " won this round!");
             result.textContent = (computerName + " chose scissors! " + playerName + " won this round.");
             playerScore++;
             playerScoreNum.textContent = playerScore;
@@ -167,13 +173,14 @@ function playRound(playerSelect) {
     } else if(playerSelect === "paper"){
         if(computerSelect === "scissors"){
             // result.textContent = (computerName + " won this round!");
-            result.textContent = (computerName + " chose scissors! " + computerName + " won this round.");
+            result.textContent = (computerName + " chose scissors! " + playerName + " lost this round.");
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            console.log(computerName + " chose scissors! " + computerName + " won this round.");
             // console.log(computerName + " won this round!");
+            console.log(computerName + " chose scissors! " + playerName + " lost this round.");
         } else {
+            // result.textContent = (playerName + " won this round!");
             result.textContent = (computerName + " chose rock! " + playerName + " won this round.");
             playerScore++
             computerScoreNum.textContent = playerScore;
@@ -183,11 +190,12 @@ function playRound(playerSelect) {
         }
     } else if(playerSelect === "scissors"){
         if (computerSelect ===  "rock") {
-            result.textContent = (computerName + " chose rock! " + computerName + " won this round.");
+            // result.textContent = (computerName + " won this round!");
+            result.textContent = (computerName + " chose rock! " + playerName + " lost this round.");
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            console.log(computerName + " chose rock! " + computerName + " won this round.");
+            console.log(computerName + " chose rock! " + playerName + " lost this round.");
             // console.log(computerName + " won this round!");
         } else {
             result.textContent = (computerName + " chose paper! " + playerName + " won this round.");
@@ -200,3 +208,5 @@ function playRound(playerSelect) {
         }
     }
 }
+
+// function game()
