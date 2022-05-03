@@ -2,11 +2,6 @@
 let getReloadClass = document.querySelector(".reload"); // div for reload
 let reloadBtn = document.querySelector('.reload-btn'); // button for reload
 
-/* Variable for image of seventeen player */
-let svtImage
-/* Variable for name of seventeen player */
-let svtName = '';
-
 getReloadClass.addEventListener("click", function svtNameReload(event) {
     /* Switch button animation */
     reloadBtn.classList.add("reload-btn-animation");
@@ -14,19 +9,15 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
         getReloadClass.classList.add("clicked-btn");
         getReloadClass.classList.remove("unclicked-btn");
     }
-
-
     /* Generate random number to switch seventeen player */
-
     let randomNumber = Math.floor(Math.random() * 13) + 1;
     /* Randomly switch seventeen player */
 
     for( let i = 0; i <= randomNumber; i++) {
-
         /* Select image of seventeen player */
-        svtImage = document.querySelector(".svt-img");
+        let svtImage = document.querySelector(".svt-img");
         /* Select name of seventeen player */
-        svtName = document.querySelector(".svt-name");
+        let svtName = document.querySelector(".svt-name");
 
 		switch(true) {
 			case (i === 1):
@@ -90,15 +81,11 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 });
 
 /* Player's Name Input */
-let getRenameClass = document.querySelector(".rename");
-let getCaratName
-
 getRenameClass.addEventListener("click", function () {
-
+    let getRenameClass = document.querySelector(".rename");
     let caratCardName = document.querySelector(".player-name");
-    getCaratName = prompt("What's your name?");
+    let getCaratName = prompt("What's your name?");
     caratCardName.textContent = getCaratName;
-    // Code for characters limit on names
 });
 
 /* Generate random numbers for computer play */
@@ -114,19 +101,17 @@ function computerPlay() {
         return("scissors")
     }
 }
-
-
-const rockBtn = document.querySelector(".rock");
-const paperBtn = document.querySelector(".paper");
-const scissorsBtn = document.querySelector(".scissors");
-let btnChoices = [rockBtn, paperBtn, scissorsBtn];
-let playerSelection 
-
+/* Return rock, paper or scissors when player clicked button */
 function playerButtons() {
     btnChoices.forEach(choices => 
         {choices.addEventListener('click', (e) => {
 
-            playerSelection = e.target;
+            const rockBtn = document.querySelector(".rock");
+            const paperBtn = document.querySelector(".paper");
+            const scissorsBtn = document.querySelector(".scissors");
+            let btnChoices = [rockBtn, paperBtn, scissorsBtn];
+
+            let playerSelection = e.target;
     
             if(playerSelection.classList.contains("rock")){
                 playRound("rock");
@@ -150,7 +135,6 @@ console.log(playerButtons());
 function playRound(playerSelect) {
     console.log(computerPlay());
     let computerSelect = computerPlay();
-    
     let computerScore = 0;
     let playerScore = 0;
 

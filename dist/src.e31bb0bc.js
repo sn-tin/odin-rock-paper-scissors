@@ -149,12 +149,6 @@ var getReloadClass = document.querySelector(".reload"); // div for reload
 
 var reloadBtn = document.querySelector('.reload-btn'); // button for reload
 
-/* Variable for image of seventeen player */
-
-var svtImage;
-/* Variable for name of seventeen player */
-
-var svtName = '';
 getReloadClass.addEventListener("click", function svtNameReload(event) {
   /* Switch button animation */
   reloadBtn.classList.add("reload-btn-animation");
@@ -171,10 +165,10 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 
   for (var i = 0; i <= randomNumber; i++) {
     /* Select image of seventeen player */
-    svtImage = document.querySelector(".svt-img");
+    var svtImage = document.querySelector(".svt-img");
     /* Select name of seventeen player */
 
-    svtName = document.querySelector(".svt-name");
+    var svtName = document.querySelector(".svt-name");
 
     switch (true) {
       case i === 1:
@@ -251,12 +245,11 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 });
 /* Player's Name Input */
 
-var getRenameClass = document.querySelector(".rename");
-var getCaratName;
 getRenameClass.addEventListener("click", function () {
+  var getRenameClass = document.querySelector(".rename");
   var caratCardName = document.querySelector(".player-name");
-  getCaratName = prompt("What's your name?");
-  caratCardName.textContent = getCaratName; // Code for characters limit on names
+  var getCaratName = prompt("What's your name?");
+  caratCardName.textContent = getCaratName;
 });
 /* Generate random numbers for computer play */
 
@@ -393,7 +386,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39827" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42091" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
