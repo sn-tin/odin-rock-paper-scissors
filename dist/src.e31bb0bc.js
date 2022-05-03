@@ -320,8 +320,7 @@ function playRound(playerSelect) {
   var computerSelect = play;
   console.log(play);
   var playerScoreNum = document.querySelector(".player-score");
-  var computerScoreNum = document.querySelector(".computer-score");
-  /* Select players' name */
+  var computerScoreNum = document.querySelector(".computer-score"); // Select players' name 
 
   var playerName = document.querySelector(".player-name").textContent;
   var computerName = document.querySelector(".svt-name").textContent;
@@ -381,19 +380,41 @@ function gameRound() {
   numOfRounds.textContent = rounds;
 }
 
+var tryAgainButton = document.querySelector(".try-again");
+
 function gameOver() {
   /* Loop for 5 rounds of game */
   var playButtons = document.querySelector(".play-buttons");
+  var roundLabel = document.querySelector(".round-label");
 
-  if (rounds === 5) {
-    playButtons.display = "none";
+  if (rounds === 10) {
+    playButtons.style.display = "none";
+    tryAgainButton.style.display = "block";
 
-    if (playerScore > computerScore) {
-      result.textContent = playerName + " won! Baksu!";
-    } else {
-      result.textContent = computerName + " won! Try again next time!";
+    if (tryAgainButton.style.display = "block") {
+      reloadPage();
+    }
+
+    roundLabel.textContent = "Final";
+
+    if (roundLabel.textContent.includes("Final")) {
+      // Select players' name 
+      var playerName = document.querySelector(".player-name").textContent;
+      var computerName = document.querySelector(".svt-name").textContent;
+
+      if (playerScore > computerScore) {
+        result.textContent = playerName + " won! Baksu!";
+      } else {
+        result.textContent = computerName + " won! Try again next time!";
+      }
     }
   }
+}
+
+function reloadPage() {
+  tryAgainButton.addEventListener("click", function (e) {
+    window.location.reload();
+  });
 }
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -423,7 +444,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35013" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32795" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

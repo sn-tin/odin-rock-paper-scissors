@@ -156,7 +156,7 @@ function playRound(playerSelect) {
     const playerScoreNum = document.querySelector(".player-score");
     const computerScoreNum = document.querySelector(".computer-score");
 
-    /* Select players' name */
+    // Select players' name 
     let playerName = document.querySelector(".player-name").textContent;
     let computerName = document.querySelector(".svt-name").textContent;
 
@@ -218,16 +218,39 @@ function gameRound() {
     numOfRounds.textContent = rounds;
 }
 
+let tryAgainButton = document.querySelector(".try-again");
+
 function gameOver() {
     /* Loop for 5 rounds of game */
-    const playButtons = document.querySelector(".play-buttons");
-    if(rounds === 5) {
-        playButtons.display = "none";
-        if(playerScore > computerScore){
-            result.textContent = playerName + " won! Baksu!";
-        } else {
-            result.textContent = computerName + " won! Try again next time!";
+    let playButtons = document.querySelector(".play-buttons");
+    let roundLabel = document.querySelector(".round-label");
+
+    if(rounds === 10) {
+        playButtons.style.display = "none";
+        tryAgainButton.style.display = "block";
+        if(tryAgainButton.style.display = "block") {
+            reloadPage();
+        }
+        roundLabel.textContent = "Final";
+
+        if(roundLabel.textContent.includes("Final")){
+
+            // Select players' name 
+            let playerName = document.querySelector(".player-name").textContent;
+            let computerName = document.querySelector(".svt-name").textContent;
+
+            if(playerScore > computerScore){
+                result.textContent = (playerName + " won! Baksu!");
+            } else {
+                result.textContent = (computerName + " won! Try again next time!");
+            }
         }
     }
 
+}
+
+function reloadPage() {
+    tryAgainButton.addEventListener("click", (e) => {
+        window.location.reload();
+    })
 }
