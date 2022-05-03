@@ -20,7 +20,7 @@
     h1 {
         // width: 576px;
         margin: 0 auto;
-        font-size: clamp(1.125rem, 2.5vw, 3rem);
+        font-size: clamp(2rem, 3vw, 3.5rem);
         text-transform: uppercase;
         color: $black;
         // -webkit-text-stroke-width: 2px;
@@ -29,7 +29,7 @@
     }
     p {
         font-size: clamp(0.688rem , 2.5vw, 1.875rem);
-        font-weight: $bold;
+        // font-weight: $bold;
         color: $white;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black;
