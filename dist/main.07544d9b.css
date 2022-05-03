@@ -17,7 +17,7 @@ h1, h2 {
   margin-bottom: 0;
 }
 
-h3, p {
+h3, p, button {
   font-family: "Changa";
   margin-bottom: 0;
 }
@@ -124,7 +124,7 @@ main {
 }
 
 .try-again {
-  background-color: linear-gradient(90deg, rgb(255, 220, 219) 0%, rgb(180, 200, 234) 100%);
+  background: linear-gradient(90deg, rgb(255, 220, 219) 0%, rgb(180, 200, 234) 100%);
 }
 
 /* Media Query for Mobile */
