@@ -89,8 +89,7 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 	}
 });
 
-/* Carat's Name Input */
-
+/* Player's Name Input */
 let getRenameClass = document.querySelector(".rename");
 let getCaratName
 
@@ -103,7 +102,6 @@ getRenameClass.addEventListener("click", function () {
 });
 
 /* Generate random numbers for computer play */
-
 function computerPlay() {
     let computerSelection = Math.floor(Math.random() * 3);
     if (computerSelection === 0) {
@@ -160,9 +158,9 @@ function playRound(playerSelect) {
     const playerScoreNum = document.querySelector(".player-score");
     const computerScoreNum = document.querySelector(".computer-score");
 
-    /* Select players name */
-    const playerName = document.querySelector(".player-name").textContent;
-    const computerName = document.querySelector(".svt-name").textContent;
+    /* Select players' name */
+    let playerName = document.querySelector(".player-name").textContent;
+    let computerName = document.querySelector(".svt-name").textContent;
 
     if(playerSelect === computerSelect){
         result.textContent = "It's a tie!";

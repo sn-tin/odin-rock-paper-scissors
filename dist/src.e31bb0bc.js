@@ -249,7 +249,7 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
     }
   }
 });
-/* Carat's Name Input */
+/* Player's Name Input */
 
 var getRenameClass = document.querySelector(".rename");
 var getCaratName;
@@ -316,7 +316,7 @@ function playRound(playerSelect) {
   var result = document.querySelector(".result-text");
   var playerScoreNum = document.querySelector(".player-score");
   var computerScoreNum = document.querySelector(".computer-score");
-  /* Select players name */
+  /* Select players' name */
 
   var playerName = document.querySelector(".player-name").textContent;
   var computerName = document.querySelector(".svt-name").textContent;
@@ -393,7 +393,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36207" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37511" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
