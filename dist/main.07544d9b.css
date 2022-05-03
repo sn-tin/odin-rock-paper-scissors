@@ -1,4 +1,4 @@
-/* Colors */
+/* Background Colors */
 /* Fonts */
 /* Font Weight */
 * {
@@ -121,6 +121,10 @@ main {
 
 .scissors {
   background-image: url("/hand-scissors-solid.319e8f1c.svg");
+}
+
+.try-again {
+  background-color: linear-gradient(90deg, rgb(255, 220, 219) 0%, rgb(180, 200, 234) 100%);
 }
 
 /* Media Query for Mobile */

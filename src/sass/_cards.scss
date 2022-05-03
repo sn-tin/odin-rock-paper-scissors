@@ -16,13 +16,6 @@
 
 /* CARAT Card */
 
-// .card-rename-flex {
-//     display: flex;
-//     flex-direction: row-reverse;
-//     align-items: center;
-//     gap: 30px;
-// }
-
 .rename-btn {
     width: 30px;
     border: none;
@@ -137,15 +130,6 @@
 
 /* SEVENTEEN Card */
 
-// Flex svt card and reload button
-
-// .card-reload-flex {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     gap: 30px;
-// }
-
 // Reload button attributes
 
 .reload {
@@ -188,7 +172,6 @@
 }
 
 .svt-img {
-    // width: 62px;
     @extend .carat-img;
 }
 

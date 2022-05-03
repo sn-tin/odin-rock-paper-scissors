@@ -55,7 +55,7 @@
         padding: 5px 10px;
         text-align: center;
         border-right: 3px solid $black;
-        background: linear-gradient(90deg, rgba(255,220,219,1) 0%, rgba(180,200,234,1) 100%);
+        background: $gradient;
     }
     .result-text {
         width: 100%;
@@ -73,7 +73,7 @@
     padding: 30px;
     border: 3px solid $black;
     border-radius: 10px;
-    background: linear-gradient(90deg, rgba(255,220,219,1) 0%, rgba(180,200,234,1) 100%);
+    background: $gradient;
 }
 
 .rock, .paper, .scissors {
@@ -100,6 +100,12 @@
 .scissors {
     background-image: url("../images/hand-scissors-solid.svg");
     @extend .rock;
+}
+
+// To add using JavaScript
+
+.try-again {
+    background-color: $gradient;
 }
 
 /* Media Query for Mobile */
