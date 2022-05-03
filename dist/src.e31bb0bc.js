@@ -260,28 +260,19 @@ getRenameClass.addEventListener("click", function () {
 });
 /* Generate random numbers for computer play */
 
-var computerSelection;
-var rock = "rock";
-var paper = "paper";
-var scissors = "scissors";
-
 function computerPlay() {
-  computerSelection = Math.floor(Math.random() * 3) + 1;
-  var computerChoices = [rock, paper, scissors];
+  var computerSelection = Math.floor(Math.random() * 3);
+
+  if (computerSelection === 0) {
+    return "rock";
+  }
 
   if (computerSelection === 1) {
-    // console.log(computerChoices[0])
-    return computerChoices[0];
+    return "paper";
   }
 
   if (computerSelection === 2) {
-    // console.log(computerChoices[1])
-    return computerChoices[1];
-  }
-
-  if (computerSelection === 3) {
-    // console.log(computerChoices[2])
-    return computerChoices[2];
+    return "scissors";
   }
 }
 
@@ -335,39 +326,42 @@ function playRound(playerSelect) {
     console.log("It's a tie!");
   } else if (playerSelect === "rock") {
     if (computerSelect === "paper") {
-      result.textContent = computerName + " won this round!";
+      result.textContent = computerName + " chose paper! " + computerName + " won this round.";
       computerScore++;
       computerScoreNum.textContent = computerScore;
-      console.log(computerName + " won this round!");
+      console.log(computerName + " chose paper! " + computerName + " won this round.");
     } else {
-      result.textContent = playerName + " won this round!";
+      result.textContent = computerName + " chose scissors! " + playerName + " won this round.";
       playerScore++;
-      playerScoreNum.textContent = playerScore;
-      console.log(playerName + " won this round!");
+      playerScoreNum.textContent = playerScore; // console.log(playerName + " won this round!");
+
+      console.log(computerName + " chose scissors! " + playerName + " won this round.");
     }
   } else if (playerSelect === "paper") {
     if (computerSelect === "scissors") {
-      result.textContent = computerName + " won this round!";
+      // result.textContent = (computerName + " won this round!");
+      result.textContent = computerName + " chose scissors! " + computerName + " won this round.";
       computerScore++;
       computerScoreNum.textContent = computerScore;
-      console.log(computerName + " won this round!");
+      console.log(computerName + " chose scissors! " + computerName + " won this round."); // console.log(computerName + " won this round!");
     } else {
-      result.textContent = playerName + " won this round!";
+      result.textContent = computerName + " chose rock! " + playerName + " won this round.";
       playerScore++;
       computerScoreNum.textContent = playerScore;
-      console.log(playerName + " won this round!");
+      console.log(computerName + " chose rock! " + playerName + " won this round."); // console.log(playerName + " won this round!");
     }
   } else if (playerSelect === "scissors") {
     if (computerSelect === "rock") {
-      result.textContent = computerName + " won this round!";
+      result.textContent = computerName + " chose rock! " + computerName + " won this round.";
       computerScore++;
       computerScoreNum.textContent = computerScore;
-      console.log(computerName + " won this round!");
+      console.log(computerName + " chose rock! " + computerName + " won this round."); // console.log(computerName + " won this round!");
     } else {
-      result.textContent = playerName + " won this round!";
+      result.textContent = computerName + " chose paper! " + playerName + " won this round."; // result.textContent = (playerName + " won this round!");
+
       playerScore++;
       playerScoreNum.textContent = playerScore;
-      console.log(playerName + " won this round!");
+      console.log(computerName + " chose paper! " + playerName + " won this round."); // console.log(playerName + " won this round!");
     }
   }
 }
@@ -399,7 +393,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44835" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41163" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
