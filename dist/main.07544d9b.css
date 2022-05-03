@@ -124,7 +124,11 @@ main {
 }
 
 .try-again {
+  display: none;
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
   background: linear-gradient(90deg, rgb(255, 220, 219) 0%, rgb(180, 200, 234) 100%);
+  padding: 10px 20px;
+  border: 3px solid hsl(0deg, 0%, 0%);
 }
 
 /* Media Query for Mobile */

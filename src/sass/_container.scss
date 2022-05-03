@@ -105,7 +105,11 @@
 // To add using JavaScript
 
 .try-again {
+    display: none;
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
     background: $gradient;
+    padding: 10px 20px;
+    border: 3px solid $black;
 }
 
 /* Media Query for Mobile */
