@@ -144,8 +144,6 @@ module.exports = "/svt-pilot-12.a05031c6.jpg";
 },{}],"images/svt-pilot-13.jpg":[function(require,module,exports) {
 module.exports = "/svt-pilot-13.200ec595.jpg";
 },{}],"index.js":[function(require,module,exports) {
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 /* Switch Seventeen Player */
 var getReloadClass = document.querySelector(".reload"); // div for reload
 
@@ -314,13 +312,13 @@ console.log(playerButtons());
 /* Main Game */
 
 var result = document.querySelector(".result-text");
+var computerScore = 0;
+var playerScore = 0;
 
 function playRound(playerSelect) {
   var play = computerPlay();
-  console.log(play);
   var computerSelect = play;
-  var computerScore = 0;
-  var playerScore = 0;
+  console.log(play);
   var playerScoreNum = document.querySelector(".player-score");
   var computerScoreNum = document.querySelector(".computer-score");
   /* Select players' name */
@@ -368,34 +366,35 @@ function playRound(playerSelect) {
       console.log(computerName + " chose paper! " + playerName + " won this round.");
     }
   }
+
+  gameRound();
+  gameOver();
+}
+/* For Rounds */
+
+
+var rounds = 0;
+
+function gameRound() {
+  var numOfRounds = document.querySelector(".num-of-rounds");
+  rounds++;
+  numOfRounds.textContent = rounds;
 }
 
-function game() {
+function gameOver() {
   /* Loop for 5 rounds of game */
-  var rounds = 0;
+  var playButtons = document.querySelector(".play-buttons");
 
-  for (var i = 0; i < 5; i++) {
-    var numOfRounds = document.querySelector(".num-of-rounds");
-    +rounds, _readOnlyError("rounds");
-    numOfRounds.textContent = rounds;
-    playRound();
+  if (rounds === 5) {
+    playButtons.display = "none";
 
-    if (i === rounds) {
-      if (playScore === computerScore) {
-        result.textContent = "It's a tie! Play again!";
-        console.log("It's a tie! Play again!");
-      } else if (playScore > computerScore) {
-        result.textContent = "You won! Baksu!";
-        console.log("You won! Baksu!");
-      } else {
-        result.textContent = "Seventeen Won! Try again next time!";
-        console.log("Seventeen Won! Try again next time!");
-      }
+    if (playerScore > computerScore) {
+      result.textContent = playerName + " won! Baksu!";
+    } else {
+      result.textContent = computerName + " won! Try again next time!";
     }
   }
 }
-
-game(); // console.log(game());
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -424,7 +423,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34889" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39047" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

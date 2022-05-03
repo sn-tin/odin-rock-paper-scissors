@@ -145,13 +145,13 @@ console.log(playerButtons());
 /* Main Game */
 
 const result = document.querySelector(".result-text");
+let computerScore = 0;
+let playerScore = 0;
 
 function playRound(playerSelect) {
     const play = computerPlay();
-    console.log(play);
     let computerSelect = play;
-    let computerScore = 0;
-    let playerScore = 0;
+    console.log(play);
 
     const playerScoreNum = document.querySelector(".player-score");
     const computerScoreNum = document.querySelector(".computer-score");
@@ -206,30 +206,28 @@ function playRound(playerSelect) {
             console.log(computerName + " chose paper! " + playerName + " won this round.");
         }
     }
+    gameRound();
+    gameOver();
 }
 
-function game() {
+/* For Rounds */
+let rounds = 0;
+function gameRound() {
+    const numOfRounds = document.querySelector(".num-of-rounds");
+    rounds++
+    numOfRounds.textContent = rounds;
+}
+
+function gameOver() {
     /* Loop for 5 rounds of game */
-    const rounds = 0;
-    for(let i = 0; i < 5; i++) {
-        const numOfRounds = document.querySelector(".num-of-rounds");
-        rounds++
-        numOfRounds.textContent = rounds;
-        playRound();
-        if(i === rounds) {
-            if(playScore === computerScore) {
-                result.textContent = "It's a tie! Play again!";
-                console.log("It's a tie! Play again!");
-            } else if(playScore > computerScore) {
-                result.textContent = "You won! Baksu!";
-                console.log("You won! Baksu!");
-            } else {
-                result.textContent = "Seventeen Won! Try again next time!";
-                console.log("Seventeen Won! Try again next time!");
-            }
+    const playButtons = document.querySelector(".play-buttons");
+    if(rounds === 5) {
+        playButtons.display = "none";
+        if(playerScore > computerScore){
+            result.textContent = playerName + " won! Baksu!";
+        } else {
+            result.textContent = computerName + " won! Try again next time!";
         }
     }
-}
 
-game();
-// console.log(game());
+}
