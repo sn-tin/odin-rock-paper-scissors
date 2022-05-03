@@ -248,10 +248,18 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 var getRenameClass = document.querySelector(".rename");
 getRenameClass.addEventListener("click", function () {
   var caratCardName = document.querySelector(".player-name");
-  var getCaratName = prompt("What's your name?");
-  caratCardName.textContent = getCaratName;
+  var getCaratName = prompt("What's your name?"); // Capitalized player's name input 
+
+  var capitalizedName = capitalizedFirstLetter(getCaratName);
+  caratCardName.textContent = capitalizedName;
 });
+
+function capitalizedFirstLetter(str) {
+  var capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+  return capitalized;
+}
 /* Generate random numbers for computer play */
+
 
 function computerPlay() {
   var computerSelection = Math.floor(Math.random() * 3);
@@ -444,7 +452,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32795" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40807" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

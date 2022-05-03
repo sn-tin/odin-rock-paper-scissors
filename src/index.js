@@ -86,8 +86,16 @@ let getRenameClass = document.querySelector(".rename");
 getRenameClass.addEventListener("click", function () {
     let caratCardName = document.querySelector(".player-name");
     let getCaratName = prompt("What's your name?");
-    caratCardName.textContent = getCaratName;
+    // Capitalized player's name input 
+    const capitalizedName = capitalizedFirstLetter(getCaratName);
+
+    caratCardName.textContent = capitalizedName;
 });
+
+function capitalizedFirstLetter(str){
+    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+    return capitalized;
+}
 
 /* Generate random numbers for computer play */
 function computerPlay() {
