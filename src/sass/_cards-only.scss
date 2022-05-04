@@ -145,7 +145,7 @@
     @extend .carat-img;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 599px) {
     .players-card {
         flex-direction: column;
         margin-top: 10px;
@@ -194,7 +194,7 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1000px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
     .players-card {
         gap: 50px;
     }
