@@ -17,14 +17,6 @@
 <body>
 
     <main>
-        <!-- Banner -->
-        <!-- <nav>
-            <ul>
-                <li>How to Play</li>
-                <li>About</li>
-            </ul>
-        </nav> -->
-        <!-- End of Banner -->
 
         <!-- Container -->
         <div class="container">
@@ -46,22 +38,20 @@
             <!-- Players' Card -->
             <div class="players-card">
                 <!-- Start of Carat Card -->
-                <!-- <div class="card-rename-flex"> -->
                     <div class="carat-card">
                         <div class="card-content">
                             <div class="card-name-box">
                                 <p class="card-name">Carat</p>
                             </div>
-                            <img class="carat-img" src="./images/carat-pic.svg" alt="Carat player's display picture">
+                            <div class="img-box">
+                                <img class="carat-img" src="./images/carat-pic.svg" alt="Carat player's display picture">
+                            </div>
                             <div class="play-info">
-                                <h1 class="player-name">You</h1>
+                                <h1 class="player-name">Player 1</h1>
                                 <div class="monitoring">
                                     <div class="rename unclicked-btn">
                                         <button class="rename-btn"></button>
                                     </div>
-                                    <!-- <div class="rename unclicked-btn">
-                                        <button class="rename-btn"></button>
-                                    </div> -->
                                     <div class="scoreboard">
                                         <p class="score-heading">Score</p>
                                         <p class="score-count player-score">0</p>
@@ -70,21 +60,19 @@
                             </div>
                         </div>
                     </div>
-                <!-- </div> -->
                 <!-- End of Carat Card -->
 
-                <h2>VS</h2>
-
                 <!-- Start of SVT Card -->
-                <!-- <div class="card-reload-flex"> -->
                     <div class="svt-card">
                         <div class="card-content">
                             <div class="card-name-box">
                                 <p class="card-name">Seventeen</p>
                             </div>
-                            <img class="svt-img" src="./images/svt-pilot-13.jpg" alt="Seventeen player's display picture">
+                            <div class="img-box"> 
+                                <img class="svt-img" src="./images/svt-pilot-13.jpg" alt="Seventeen player's display picture">
+                            </div>
                             <div class="play-info">
-                                <h1 class="svt-name">Opponent</h1>
+                                <h1 class="svt-name">Player 2</h1>
                                 <div class="monitoring">
                                     <div class="reload unclicked-btn">
                                         <button class="reload-btn"></button>
@@ -98,24 +86,25 @@
                             </div>
                         </div>
                     </div>
-                <!-- </div> -->
                 <!-- End of SVT Card -->
             </div>
 
+
+            <!-- Play Buttons -->
+            <div class="play-buttons">
+                <button class="rock play-rock"></button>
+                <button class="paper play-paper"></button>
+                <button class="scissors play-scissors"></button>
+            </div>
+            <!-- End of Play Buttons -->
+            
+            <!-- Display after the game ends -->
+            <button class="try-again">
+                Try again?
+            </button>
+            
         </div>
         <!-- End of container -->
-
-                    <!-- Play Buttons -->
-                    <div class="play-buttons">
-                        <button class="rock play-rock"></button>
-                        <button class="paper play-paper"></button>
-                        <button class="scissors play-scissors"></button>
-                    </div>
-                    <!-- End of Play Buttons -->
-
-                    <button class="try-again">
-                        Try again?
-                    </button>
 
     </main>
 

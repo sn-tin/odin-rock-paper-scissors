@@ -92,6 +92,7 @@ getRenameClass.addEventListener("click", function () {
     caratCardName.textContent = capitalizedName;
 });
 
+/* Function to capitalize first letter of player's name input */
 function capitalizedFirstLetter(str){
     const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
     return capitalized;
@@ -218,7 +219,7 @@ function playRound(playerSelect) {
     gameOver();
 }
 
-/* For Rounds */
+/* Function to count rounds */
 let rounds = 0;
 function gameRound() {
     const numOfRounds = document.querySelector(".num-of-rounds");
@@ -228,8 +229,9 @@ function gameRound() {
 
 let tryAgainButton = document.querySelector(".try-again");
 
+/* Function when the game is over */
 function gameOver() {
-    /* Loop for 5 rounds of game */
+
     let playButtons = document.querySelector(".play-buttons");
     let roundLabel = document.querySelector(".round-label");
 
@@ -257,6 +259,7 @@ function gameOver() {
 
 }
 
+/* Function to reload page */
 function reloadPage() {
     tryAgainButton.addEventListener("click", (e) => {
         window.location.reload();

@@ -3,34 +3,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 150px;
     margin-top: 30px;
-    h2 {
-        color: $white;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: black;
-        text-shadow: 0 5px hsla(0, 0%, 0%, 0.25);
-    }
 }
 
 /* CARAT Card */
-
-.rename {
-    width: 63px;
-    border-right: 3px solid $black;
-}
-
-.rename-btn {
-    height: 100%;
-    border: none;
-    background-image: url("../images/pen-to-square-solid.svg");
-    background-color: transparent;
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding: 30px;
-    margin: 0 auto;
-}
 
 .carat-card {
     display: flex;
@@ -54,7 +31,6 @@
 }
 
 .card-name {
-    // font-size: clamp(0.5rem , 2.5vw, 1.2rem);
     font-size: clamp(0.5rem , 2.5vw, 1rem);
     background-color: $serenity;
     text-transform: uppercase;
@@ -74,9 +50,9 @@
     display: flex;
     flex-direction: column;
     background-color: $gray;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 3px solid $black;
-    // box-shadow: inset 0 -5px hsla(0, 0%, 0%, 0.25);
+
 }
 
 .player-name {
@@ -84,7 +60,7 @@
     font-size: clamp(0.5rem , 2.5vw, 1rem);
     text-transform: uppercase;
     background-color: $serenity;
-    border-radius: 15px 15px 0 0;
+    border-radius: 5px 5px 0 0;
     border-bottom: 3px solid $black;
     padding: 3px;
 }
@@ -97,21 +73,19 @@
 .scoreboard {
     width: 100%;
     margin: 0 auto;
+    padding: 5px;
+    background-color: $white;
+    border-radius: 0 0 10px 0;
     .score-heading {
         font-size: clamp(0.5rem, 2.5vw, 1rem);
-        padding-bottom: 0;
-        border-bottom: 3px solid $black;
+        padding: 5px 0 0;
     }
     .score-count {
-        border-radius: 0 0 20px 0;
-        background-color: white;
-        padding: 10px 0;
         font-size: clamp(0.9rem, 2.5vw, 1.5rem);
     }
 }
 
 .unclicked-btn {
-    box-shadow: inset 0 -7px hsl(0deg 0% 0% / 25%);
     border-radius: 0 0 0 15px;
 }
 
@@ -121,23 +95,28 @@
 
 /* SEVENTEEN Card */
 
-// Reload button attributes
+// Rename and reload button attributes
 
-.reload {
+.rename, .reload {
     width: 63px;
     border-right: 3px solid $black;
 }
 
-.reload-btn {
+.rename-btn {
     height: 100%;
     border: none;
-    background-image: url("../images/arrows-rotate-solid.svg");
+    background-image: url("../images/pen-to-square-solid.svg");
     background-color: transparent;
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 30px;
     margin: 0 auto;
+}
+
+.reload-btn {
+    background-image: url("../images/arrows-rotate-solid.svg");
+    @extend .rename-btn;
 }
 
 // To add using JavaScript
@@ -166,14 +145,10 @@
     @extend .carat-img;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 767px) {
     .players-card {
         flex-direction: column;
         gap: 10px;
-        // transform: scale(0.8);
-        h2 {
-            display: none;
-        }
     }
 
     .carat-card {
@@ -201,8 +176,25 @@
         border-radius: 0;
     }
 
-    .rename-btn, .reload {
-        background-size: 5px;
+    .rename, .reload {
+        width: 50px;
     }
 
+    .rename-btn, .reload-btn {
+        background-size: 10px;
+        padding: 10px;
+    }
+
+    .scoreboard {
+        padding: 2px;
+        .score-count {
+            padding: 5px 0;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    .players-card {
+        gap: 50px;
+    }
 }

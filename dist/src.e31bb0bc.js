@@ -253,6 +253,7 @@ getRenameClass.addEventListener("click", function () {
   var capitalizedName = capitalizedFirstLetter(getCaratName);
   caratCardName.textContent = capitalizedName;
 });
+/* Function to capitalize first letter of player's name input */
 
 function capitalizedFirstLetter(str) {
   var capitalized = str.charAt(0).toUpperCase() + str.slice(1);
@@ -377,7 +378,7 @@ function playRound(playerSelect) {
   gameRound();
   gameOver();
 }
-/* For Rounds */
+/* Function to count rounds */
 
 
 var rounds = 0;
@@ -389,9 +390,9 @@ function gameRound() {
 }
 
 var tryAgainButton = document.querySelector(".try-again");
+/* Function when the game is over */
 
 function gameOver() {
-  /* Loop for 5 rounds of game */
   var playButtons = document.querySelector(".play-buttons");
   var roundLabel = document.querySelector(".round-label");
 
@@ -418,6 +419,8 @@ function gameOver() {
     }
   }
 }
+/* Function to reload page */
+
 
 function reloadPage() {
   tryAgainButton.addEventListener("click", function (e) {
@@ -452,7 +455,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36353" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40469" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
