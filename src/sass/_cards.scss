@@ -5,7 +5,6 @@
     justify-content: center;
     gap: 100px;
     margin-top: 30px;
-
     h2 {
         color: $white;
         -webkit-text-stroke-width: 2px;
@@ -16,17 +15,21 @@
 
 /* CARAT Card */
 
-.rename-btn {
-    width: 30px;
-    border: none;
+.rename {
+    width: 63px;
     border-right: 3px solid $black;
+}
+
+.rename-btn {
+    height: 100%;
+    border: none;
     background-image: url("../images/pen-to-square-solid.svg");
-    background-size: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
     background-color: transparent;
-    transition: all 0.5s ease-in;
-    padding: 0 30px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 30px;
+    margin: 0 auto;
 }
 
 .carat-card {
@@ -86,19 +89,6 @@
     padding: 3px;
 }
 
-.rename {
-    border-radius: 0 0 0 15px;
-    width: 30px;
-    border: none;
-    border-right: 3px solid $black;
-    background-image: url("../images/pen-to-square-solid.svg");
-    background-size: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    padding: 0 30px;
-}
-
 .monitoring {
     display: flex;
     flex-direction: row;
@@ -108,7 +98,8 @@
     width: 100%;
     margin: 0 auto;
     .score-heading {
-        padding-bottom: 2px;
+        font-size: clamp(0.5rem, 2.5vw, 1rem);
+        padding-bottom: 0;
         border-bottom: 3px solid $black;
     }
     .score-count {
@@ -179,14 +170,27 @@
     .players-card {
         flex-direction: column;
         gap: 10px;
-        transform: scale(0.8);
+        // transform: scale(0.8);
         h2 {
             display: none;
         }
     }
 
+    .carat-card {
+        width: 220px;
+    }
+
+    .card-content {
+        width: 180px;
+        padding: 20px 15px;
+    }
+
     .play-info {
         border-radius: 5px;
+    }
+
+    .carat-img {
+        width: 40px;
     }
 
     .carat-card {
@@ -197,10 +201,8 @@
         border-radius: 0;
     }
 
-    .card-reload-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
+    .rename-btn, .reload {
+        background-size: 5px;
     }
 
 }

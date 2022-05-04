@@ -1,13 +1,25 @@
 /* Banner */
-.banner {
-    width: 100%;
-    background-color: $rose-quartz;
-    p {
-        font-size: clamp(0.375rem, 2.5vw, 1.2rem);
-        text-align: center;
-        margin: 15px auto;
-    }
-}
+// nav {
+//     width: 100%;
+//     background-color: $rose-quartz;
+// }
+
+// ul {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-end;
+//     margin: 0;
+//     li {
+//         font-size: clamp(0.375rem, 2.5vw, 1.2rem);
+//         // text-align: right;
+//         margin: 8px 0;
+//         padding: 0 20px;
+//         list-style: none;
+//     }
+//     :hover {
+//         font-weight: $bold;
+//     }
+// }
 
 /* Container */
 .container {
@@ -19,21 +31,23 @@
 .header-text {
     h1 {
         // width: 576px;
+        font-weight: $bold;
         margin: 0 auto;
-        font-size: clamp(2rem, 3vw, 3.5rem);
+        font-size: clamp(1.2rem, 3vw, 3.5rem);
         text-transform: uppercase;
         color: $black;
         // -webkit-text-stroke-width: 2px;
         // -webkit-text-stroke-color: black;
-        text-shadow: 0 4px hsl(0deg 0% 0% / 25%);
+        // text-shadow: 0 4px hsl(0deg 0% 0% / 25%);
     }
     p {
+        font-style: $big-font;
         font-size: clamp(0.688rem , 2.5vw, 1.875rem);
-        // font-weight: $bold;
-        color: $white;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: black;
-        text-shadow: 0 3px hsl(0deg 0% 0% / 25%);
+        font-weight: $regular;
+        color: $black;
+        // -webkit-text-stroke-width: 1px;
+        // -webkit-text-stroke-color: black;
+        // text-shadow: 0 3px hsl(0deg 0% 0% / 25%);
         margin: 10px 0;
     }
 }
@@ -50,7 +64,7 @@
     border: 3px solid $black;
     .round-label {
         width: 150px;
-        font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+        font-size: clamp(0.3rem, 2.5vw, 1.2rem);
         margin-bottom: 0;
         padding: 5px 10px;
         text-align: center;
@@ -60,6 +74,10 @@
     .result-text {
         width: 100%;
     }
+}
+
+.result-text {
+    font-size: clamp(0.3rem, 2.5vw, 1.2rem);
 }
 
 /* Play Buttons */
@@ -120,9 +138,9 @@
     }
     .result {
         margin: 20px auto;
-        width: 85%;
+        width: 90%;
         .round-label {
-            width: 100px;
+            width: 80px;
         }
     }
     .play-buttons {
