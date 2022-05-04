@@ -6,9 +6,9 @@ A self-indulgent rock, paper, scissors game. The usual rules applies to this gam
 
 ## Screenshot
 
-![Before the Game Starts Preview](game-preview-1.png)
-![During the Game](game-preview-2.png)
-![During the Game](images/game-preview-3.png)
+![Before the Game Starts Preview](src/images/game-preview-1.png)
+![During the Game](src/images/game-preview-2.png)
+![During the Game](src/images/game-preview-3.png)
 
 ## References
 
