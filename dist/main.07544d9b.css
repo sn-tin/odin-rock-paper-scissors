@@ -56,9 +56,9 @@ main {
 /* Result */
 .result {
   display: flex;
-  flex-wrap: row wrap;
+  flex-direction: row;
   align-items: center;
-  width: 550px;
+  width: 750px;
   margin: 50px auto;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 5px;
