@@ -131,12 +131,16 @@ main {
 
 /* Media Query for Mobile */
 @media screen and (max-width: 500px) {
+  .header-text p {
+    margin: 5px 0;
+  }
+
   .container {
     margin: 25px auto;
   }
 
   .result {
-    margin: 20px auto;
+    margin: 20px auto 10px;
     width: 90%;
   }
   .result .round-label {
@@ -147,7 +151,7 @@ main {
     width: 140px;
     margin: 15px auto;
     gap: 5px;
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 5px;
   }
 
@@ -301,6 +305,7 @@ main {
 @media screen and (max-width: 767px) {
   .players-card {
     flex-direction: column;
+    margin-top: 10px;
     gap: 10px;
   }
 
