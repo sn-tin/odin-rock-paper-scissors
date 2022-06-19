@@ -255,14 +255,13 @@ getRenameClass.addEventListener("click", function () {
 });
 /* Function to capitalize first letter of player's name input */
 
-function capitalizedFirstLetter(str) {
-  var capitalized = str.charAt(0).toUpperCase() + str.slice(1);
-  return capitalized;
-}
+var capitalizedFirstLetter = function capitalizedFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
 /* Generate random numbers for computer play */
 
 
-function computerPlay() {
+var computerPlay = function computerPlay() {
   var computerSelection = Math.floor(Math.random() * 3);
 
   if (computerSelection === 0) {
@@ -276,7 +275,7 @@ function computerPlay() {
   if (computerSelection === 2) {
     return "scissors";
   }
-}
+};
 /* Return rock, paper or scissors when player clicked button */
 
 
@@ -285,7 +284,7 @@ var paperBtn = document.querySelector(".paper");
 var scissorsBtn = document.querySelector(".scissors");
 var btnChoices = [rockBtn, paperBtn, scissorsBtn];
 
-function playerButtons() {
+var playerButtons = function playerButtons() {
   btnChoices.forEach(function (choices) {
     choices.addEventListener('click', function (e) {
       var playerSelection = e.target;
@@ -315,7 +314,7 @@ function playerButtons() {
       }
     });
   });
-}
+};
 
 console.log(playerButtons());
 /* Main Game */
@@ -324,8 +323,8 @@ var result = document.querySelector(".result-text");
 var computerScore = 0;
 var playerScore = 0;
 
-function playRound(playerSelect) {
-  var play = computerPlay();
+var playRound = function playRound(playerSelect) {
+  var play = computerPlay;
   var computerSelect = play;
   console.log(play);
   var playerScoreNum = document.querySelector(".player-score");
@@ -377,22 +376,22 @@ function playRound(playerSelect) {
 
   gameRound();
   gameOver();
-}
+};
 /* Function to count rounds */
 
 
 var rounds = 0;
 
-function gameRound() {
+var gameRound = function gameRound() {
   var numOfRounds = document.querySelector(".num-of-rounds");
   rounds++;
   numOfRounds.textContent = rounds;
-}
+};
 
 var tryAgainButton = document.querySelector(".try-again");
 /* Function when the game is over */
 
-function gameOver() {
+var gameOver = function gameOver() {
   var playButtons = document.querySelector(".play-buttons");
   var roundLabel = document.querySelector(".round-label");
 
@@ -418,15 +417,15 @@ function gameOver() {
       }
     }
   }
-}
+};
 /* Function to reload page */
 
 
-function reloadPage() {
+var reloadPage = function reloadPage() {
   tryAgainButton.addEventListener("click", function (e) {
     window.location.reload();
   });
-}
+};
 },{"./images/svt-pilot-1.jpg":"images/svt-pilot-1.jpg","./images/svt-pilot-2.jpg":"images/svt-pilot-2.jpg","./images/svt-pilot-3.jpg":"images/svt-pilot-3.jpg","./images/svt-pilot-4.jpg":"images/svt-pilot-4.jpg","./images/svt-pilot-5.jpg":"images/svt-pilot-5.jpg","./images/svt-pilot-6.jpg":"images/svt-pilot-6.jpg","./images/svt-pilot-7.jpg":"images/svt-pilot-7.jpg","./images/svt-pilot-8.jpg":"images/svt-pilot-8.jpg","./images/svt-pilot-9.jpg":"images/svt-pilot-9.jpg","./images/svt-pilot-10.jpg":"images/svt-pilot-10.jpg","./images/svt-pilot-11.jpg":"images/svt-pilot-11.jpg","./images/svt-pilot-12.jpg":"images/svt-pilot-12.jpg","./images/svt-pilot-13.jpg":"images/svt-pilot-13.jpg"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -455,7 +454,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37857" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45413" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

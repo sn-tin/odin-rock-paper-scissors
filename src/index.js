@@ -93,13 +93,10 @@ getRenameClass.addEventListener("click", function () {
 });
 
 /* Function to capitalize first letter of player's name input */
-function capitalizedFirstLetter(str){
-    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
-    return capitalized;
-}
+const capitalizedFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 /* Generate random numbers for computer play */
-function computerPlay() {
+const computerPlay = () => {
     let computerSelection = Math.floor(Math.random() * 3);
     if (computerSelection === 0) {
         return("rock")
@@ -118,7 +115,7 @@ const paperBtn = document.querySelector(".paper");
 const scissorsBtn = document.querySelector(".scissors");
 let btnChoices = [rockBtn, paperBtn, scissorsBtn];
 
-function playerButtons() {
+const playerButtons = () => {
     btnChoices.forEach(choices => 
         {choices.addEventListener('click', (e) => {
 
@@ -157,8 +154,8 @@ const result = document.querySelector(".result-text");
 let computerScore = 0;
 let playerScore = 0;
 
-function playRound(playerSelect) {
-    const play = computerPlay();
+const playRound = (playerSelect) => {
+    const play = computerPlay;
     let computerSelect = play;
     console.log(play);
 
@@ -221,7 +218,7 @@ function playRound(playerSelect) {
 
 /* Function to count rounds */
 let rounds = 0;
-function gameRound() {
+const gameRound = () => {
     const numOfRounds = document.querySelector(".num-of-rounds");
     rounds++
     numOfRounds.textContent = rounds;
@@ -230,7 +227,7 @@ function gameRound() {
 let tryAgainButton = document.querySelector(".try-again");
 
 /* Function when the game is over */
-function gameOver() {
+const gameOver = () => {
 
     let playButtons = document.querySelector(".play-buttons");
     let roundLabel = document.querySelector(".round-label");
@@ -260,7 +257,7 @@ function gameOver() {
 }
 
 /* Function to reload page */
-function reloadPage() {
+const reloadPage = () => {
     tryAgainButton.addEventListener("click", (e) => {
         window.location.reload();
     })
