@@ -247,9 +247,9 @@ const gameOver = () => {
             let computerName = document.querySelector(".svt-name").textContent;
 
             if(playerScore > computerScore){
-                result.textContent = (playerName + " won! Baksu!");
+                result.textContent = `${playerName} won! Baksu!`;
             } else {
-                result.textContent = (computerName + " won! Try again next time!");
+                result.textContent = `${computerName} won! Try again next time!`;
             }
         }
     }
