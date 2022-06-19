@@ -171,11 +171,11 @@ const playRound = (playerSelect) => {
         console.log( "It's a tie!")
     } else if(playerSelect === "rock"){
         if(computerSelect === "paper") {
-            result.textContent = `${computerName} chose paper! ${playerName} " lost this round.`;
+            result.textContent = `${computerName} chose paper! ${playerName} lost this round.`;
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            console.log(`${computerName} chose paper! ${playerName} " lost this round.`)
+            console.log(`${computerName} chose paper! ${playerName} lost this round.`)
         } else {
             result.textContent = `${computerName} chose scissors! ${playerName} won this round.`;
             playerScore++;

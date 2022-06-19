@@ -338,10 +338,10 @@ var playRound = function playRound(playerSelect) {
     console.log("It's a tie!");
   } else if (playerSelect === "rock") {
     if (computerSelect === "paper") {
-      result.textContent = "".concat(computerName, " chose paper! ").concat(playerName, " \" lost this round.");
+      result.textContent = "".concat(computerName, " chose paper! ").concat(playerName, " lost this round.");
       computerScore++;
       computerScoreNum.textContent = computerScore;
-      console.log("".concat(computerName, " chose paper! ").concat(playerName, " \" lost this round."));
+      console.log("".concat(computerName, " chose paper! ").concat(playerName, " lost this round."));
     } else {
       result.textContent = "".concat(computerName, " chose scissors! ").concat(playerName, " won this round.");
       playerScore++;
@@ -454,7 +454,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33439" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36125" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
