@@ -173,7 +173,7 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
     switch (true) {
       case i === 1:
         svtImage.src = require("./images/svt-pilot-1.jpg");
-        svtName.textContent = "Seungcheol";
+        svtName.textContent = "S.coups";
         break;
 
       case i === 2:
@@ -188,7 +188,7 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 
       case i === 4:
         svtImage.src = require("./images/svt-pilot-4.jpg");
-        svtName.textContent = "Junhui";
+        svtName.textContent = "Jun";
         break;
 
       case i === 5:
@@ -203,12 +203,12 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 
       case i === 7:
         svtImage.src = require("./images/svt-pilot-7.jpg");
-        svtName.textContent = "Jihoon";
+        svtName.textContent = "Woozi";
         break;
 
       case i === 8:
         svtImage.src = require("./images/svt-pilot-8.jpg");
-        svtName.textContent = "Minghao";
+        svtName.textContent = "The8";
         break;
 
       case i == 9:
@@ -324,7 +324,7 @@ var computerScore = 0;
 var playerScore = 0;
 
 var playRound = function playRound(playerSelect) {
-  var play = computerPlay;
+  var play = computerPlay();
   var computerSelect = play;
   console.log(play);
   var playerScoreNum = document.querySelector(".player-score");
@@ -338,39 +338,39 @@ var playRound = function playRound(playerSelect) {
     console.log("It's a tie!");
   } else if (playerSelect === "rock") {
     if (computerSelect === "paper") {
-      result.textContent = computerName + " chose paper! " + playerName + " lost this round.";
+      result.textContent = "".concat(computerName, " chose paper! ").concat(playerName, " \" lost this round.");
       computerScore++;
       computerScoreNum.textContent = computerScore;
-      console.log(computerName + " chose paper! " + playerName + " lost this round.");
+      console.log("".concat(computerName, " chose paper! ").concat(playerName, " \" lost this round."));
     } else {
-      result.textContent = computerName + " chose scissors! " + playerName + " won this round.";
+      result.textContent = "".concat(computerName, " chose scissors! ").concat(playerName, " won this round.");
       playerScore++;
       playerScoreNum.textContent = playerScore;
-      console.log(computerName + " chose scissors! " + playerName + " won this round.");
+      console.log("".concat(computerName, " chose scissors! ").concat(playerName, " won this round."));
     }
   } else if (playerSelect === "paper") {
     if (computerSelect === "scissors") {
-      result.textContent = computerName + " chose scissors! " + playerName + " lost this round.";
+      result.textContent = "".concat(computerName, " chose scissors! ").concat(playerName, " lost this round.");
       computerScore++;
       computerScoreNum.textContent = computerScore;
-      console.log(computerName + " chose scissors! " + playerName + " lost this round.");
+      console.log("".concat(computerName, " chose scissors! ").concat(playerName, " lost this round."));
     } else {
-      result.textContent = computerName + " chose rock! " + playerName + " won this round.";
+      result.textContent = "".concat(computerName, " chose rock! ").concat(playerName, " won this round.");
       playerScore++;
       computerScoreNum.textContent = playerScore;
-      console.log(computerName + " chose rock! " + playerName + " won this round.");
+      console.log("".concat(computerName, " chose rock! ").concat(playerName, " won this round."));
     }
   } else if (playerSelect === "scissors") {
     if (computerSelect === "rock") {
-      result.textContent = computerName + " chose rock! " + playerName + " lost this round.";
+      result.textContent = "".concat(computerName, " chose rock! ").concat(playerName, " lost this round.");
       computerScore++;
       computerScoreNum.textContent = computerScore;
-      console.log(computerName + " chose rock! " + playerName + " lost this round.");
+      console.log("".concat(computerName, " chose rock! ").concat(playerName, " lost this round."));
     } else {
-      result.textContent = computerName + " chose paper! " + playerName + " won this round.";
+      result.textContent = "".concat(computerName, " chose paper! ").concat(playerName, " won this round.");
       playerScore++;
       playerScoreNum.textContent = playerScore;
-      console.log(computerName + " chose paper! " + playerName + " won this round.");
+      console.log("".concat(computerName, " chose paper! ").concat(playerName, " won this round."));
     }
   }
 
@@ -454,7 +454,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45413" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45753" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

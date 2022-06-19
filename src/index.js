@@ -22,7 +22,7 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 		switch(true) {
 			case (i === 1):
 				svtImage.src = require("./images/svt-pilot-1.jpg");
-				svtName.textContent = "Seungcheol";
+				svtName.textContent = "S.coups";
 			break;
 			case(i === 2):
                 svtImage.src = require("./images/svt-pilot-2.jpg");
@@ -34,7 +34,7 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 			break;
 			case(i === 4):
                 svtImage.src = require("./images/svt-pilot-4.jpg");
-                svtName.textContent = "Junhui";
+                svtName.textContent = "Jun";
 			break;
 			case(i === 5):
                 svtImage.src = require("./images/svt-pilot-5.jpg");
@@ -46,11 +46,11 @@ getReloadClass.addEventListener("click", function svtNameReload(event) {
 			break;
 			case(i === 7):
                 svtImage.src = require("./images/svt-pilot-7.jpg");
-                svtName.textContent = "Jihoon";
+                svtName.textContent = "Woozi";
 			break;
 			case(i === 8):
                 svtImage.src = require("./images/svt-pilot-8.jpg");
-                svtName.textContent = "Minghao";
+                svtName.textContent = "The8";
 			break;
 			case(i == 9):
                 svtImage.src = require("./images/svt-pilot-9.jpg");
@@ -155,7 +155,7 @@ let computerScore = 0;
 let playerScore = 0;
 
 const playRound = (playerSelect) => {
-    const play = computerPlay;
+    const play = computerPlay();
     let computerSelect = play;
     console.log(play);
 
@@ -171,45 +171,45 @@ const playRound = (playerSelect) => {
         console.log( "It's a tie!")
     } else if(playerSelect === "rock"){
         if(computerSelect === "paper") {
-            result.textContent = (computerName + " chose paper! " + playerName + " lost this round.");
+            result.textContent = `${computerName} chose paper! ${playerName} " lost this round.`;
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            console.log(computerName + " chose paper! " + playerName + " lost this round.")
+            console.log(`${computerName} chose paper! ${playerName} " lost this round.`)
         } else {
-            result.textContent = (computerName + " chose scissors! " + playerName + " won this round.");
+            result.textContent = `${computerName} chose scissors! ${playerName} won this round.`;
             playerScore++;
             playerScoreNum.textContent = playerScore;
 
-            console.log(computerName + " chose scissors! " + playerName + " won this round.");
+            console.log(`${computerName} chose scissors! ${playerName} won this round.`);
         }
     } else if(playerSelect === "paper"){
         if(computerSelect === "scissors"){
-            result.textContent = (computerName + " chose scissors! " + playerName + " lost this round.");
+            result.textContent = `${computerName} chose scissors! ${playerName} lost this round.`;
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            console.log(computerName + " chose scissors! " + playerName + " lost this round.");
+            console.log(`${computerName} chose scissors! ${playerName} lost this round.`);
         } else {
-            result.textContent = (computerName + " chose rock! " + playerName + " won this round.");
+            result.textContent = `${computerName} chose rock! ${playerName} won this round.`;
             playerScore++
             computerScoreNum.textContent = playerScore;
 
-            console.log(computerName + " chose rock! " + playerName + " won this round.");
+            console.log(`${computerName} chose rock! ${playerName} won this round.`);
         }
     } else if(playerSelect === "scissors"){
         if (computerSelect ===  "rock") {
-            result.textContent = (computerName + " chose rock! " + playerName + " lost this round.");
+            result.textContent = `${computerName} chose rock! ${playerName} lost this round.`;
             computerScore++
             computerScoreNum.textContent = computerScore;
 
-            console.log(computerName + " chose rock! " + playerName + " lost this round.");
+            console.log(`${computerName} chose rock! ${playerName} lost this round.`);
         } else {
-            result.textContent = (computerName + " chose paper! " + playerName + " won this round.");
+            result.textContent = `${computerName} chose paper! ${playerName} won this round.`;
             playerScore++
             playerScoreNum.textContent = playerScore;
 
-            console.log(computerName + " chose paper! " + playerName + " won this round.");
+            console.log(`${computerName} chose paper! ${playerName} won this round.`);
         }
     }
     gameRound();
